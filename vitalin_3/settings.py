@@ -13,10 +13,11 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 from django.conf.global_settings import LOGOUT_REDIRECT_URL
 from django.conf.global_settings import LOGIN_REDIRECT_URL
 from pathlib import Path
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+sys.path.insert(0, str(BASE_DIR/'apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #vitalin_3
-    'apps.regional.apps.RegionalConfig',
+    'apps.regional',
 ]
 
 MIDDLEWARE = [
