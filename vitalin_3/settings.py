@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #myapps
-    'core',
+    #vitalin_3
+    'apps.regional.apps.RegionalConfig',
 ]
 
 MIDDLEWARE = [
