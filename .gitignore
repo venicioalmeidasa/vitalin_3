@@ -1,0 +1,36 @@
+# Python / Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Ambiente Virtual
+venv/
+env/
+ENV/
+.env
+.venv
+
+# Banco de dados local
+db.sqlite3
+db.sqlite3-journal
+
+# Arquivos de configurações e ambiente
+*.log
+.env.local
+.env.*.local
+
+# Arquivos de tradução e build
+*.pot
+*.mo
+dist/
+build/
+*.egg-info/
+
+# Arquivos de IDE e editores
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
