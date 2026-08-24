@@ -5,6 +5,8 @@ from django.views.generic import ListView, DetailView
 
 class DistritoView(ListView):
     model = Distrito
-    template = ''
+    context_object_name = 'distritos'
+    template = 'regional/distritos.html'
+    
     
     

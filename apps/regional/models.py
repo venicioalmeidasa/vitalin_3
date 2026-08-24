@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 # Create your models here.
 class Distrito(models.Model):
+    #Regionais de saúde
     cnes = models.CharField(
         primary_key=True,
         max_length=12,
@@ -22,6 +23,10 @@ class Distrito(models.Model):
         unique=True,
         allow_unicode=True,
         help_text='Nome amigável para url'
+    )
+    data_cadastro = models.DateField(
+        verbose_name='Data do Cadastro',
+        auto_now_add=True
     )
     class Meta:
         ordering = ['nome']

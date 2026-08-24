@@ -1,0 +1,68 @@
+[
+    {
+        "model": "regional.distrito",
+        "pk": "2023466",
+        "fields": {
+            "nome": "Norte",
+            "email": "saude.distnorte@campinas.sp.gov.br",
+            "ativo": true,
+            "slug": "norte",
+            "data_cadastro": "2026-03-10"
+        }
+    },
+    {
+        "model": "regional.distrito",
+        "pk": "7774672",
+        "fields": {
+            "nome": "Leste",
+            "email": "saude.distleste@campinas.sp.gov.br",
+            "ativo": true,
+            "slug": "leste",
+            "data_cadastro": "2026-03-10"
+        }
+    },
+    {
+        "model": "regional.distrito",
+        "pk": "9555838",
+        "fields": {
+            "nome": "Sul",
+            "email": "saude.distsul@campinas.sp.gov.br",
+            "ativo": true,
+            "slug": "sul",
+            "data_cadastro": "2026-03-10"
+        }
+    },
+    {
+        "model": "regional.distrito",
+        "pk": "2023059",
+        "fields": {
+            "nome": "Noroeste",
+            "email": "saude.distnoroeste@campinas.sp.gov.br",
+            "ativo": true,
+            "slug": "noroeste",
+            "data_cadastro": "2026-03-10"
+        }
+    },
+    {
+        "model": "regional.distrito",
+        "pk": "2023040",
+        "fields": {
+            "nome": "Sudoeste",
+            "email": "saude.distsudoeste@campinas.sp.gov.br",
+            "ativo": true,
+            "slug": "sudoeste",
+            "data_cadastro": "2026-03-10"
+        }
+    },
+    {
+        "model": "regional.distrito",
+        "pk": "4252241",
+        "fields": {
+            "nome": "Suleste",
+            "email": "sms.distsuleste@campinas.sp.gov.br",
+            "ativo": true,
+            "slug": "suleste",
+            "data_cadastro": "2026-03-10"
+        }
+    }
+]
