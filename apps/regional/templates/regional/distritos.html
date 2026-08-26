@@ -2,10 +2,14 @@
 {% block sidebar %}
 {% endblock sidebar %}
 
-{% block page_head %}
-{% endblock page_head %}
+{% block page_title %}Distritos{% endblock page_title %}
+
+{% block page_subtitle %}
+Listagem dos Distritos Regionais
+{% endblock page_subtitle %}
 
 {% block content %}
     {% for distrito in distritos %}
         {{ distrito }}
+    {% endfor %}
 {% endblock content %}

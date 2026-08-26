@@ -1,0 +1,62 @@
+{% block navbar_actions %}
+<div class="vt-navbar__actions">
+    <button class="btn vt-navbar__action-btn"
+            id="btn-busca" title="Buscar" aria-label="Buscar">
+    <i class="bi bi-search"></i>
+    </button>
+
+    <button class="btn vt-navbar__action-btn"
+            id="btn-notificacoes" title="Notificações" aria-label="Notificações">
+    <i class="bi bi-bell"></i>
+    </button>
+
+    <!--Perfil - Avatar com dropdown-->
+    <div class="dropdown" id="nav-perfil">
+    <div class="vt-avatar" role="button" tabindex="0"
+            id="vt-avatar-btn"
+            data-bs-toggle="dropdown" aria-expanded="false"
+            data-bs-display="static"
+            title="Perfil" aria-label="Menu do usuário">
+        {% if user.is_authenticated %}
+        {{ user.get_short_name|default:user.username|first|upper }}
+        {% else %}
+        <i class="bi bi-person"></i>
+        {% endif %}
+    </div>
+    <ul class="dropdown-menu dropdown-menu-end vt-dropdown" role="menu">
+        {% if user.is_authenticated %}
+        <li>
+            <div class="vt-dropdown__user-info">
+            <strong class="vt-dropdown__user-name">
+                {{ user.get_full_name|default:user.username }}
+            </strong>
+            <span class="vt-dropdown__user-email">{{ user.email }}</span>
+            </div>
+        </li>
+        <li><hr class="dropdown-divider" /></li>
+        <li>
+            <a class="dropdown-item vt-dropdown__item" href="#" role="menuitem">
+            <i class="bi bi-person-circle vt-icon"></i> Meu Perfil
+            </a>
+        </li>
+        <li><hr class="dropdown-divider" /></li>
+        <li>
+            <form method="post" action="#">
+            {% csrf_token %}
+            <button class="dropdown-item vt-dropdown__item" type="submit">
+                <i class="bi bi-box-arrow-right vt-icon"></i> Sair
+            </button>
+            </form>
+        </li>
+        {% else %}
+        <li>
+            <a class="dropdown-item vt-dropdown__item" href="#" role="menuitem">
+            <i class="bi bi-box-arrow-in-right vt-icon"></i> Entrar
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+    </div>
+
+</div>
+{% endblock navbar_actions %}

@@ -1,302 +1,529 @@
 /* ==========================================================
    VITALIN — Design System Global
-   static/styles/base.css  (raiz do projeto)
-   Compartilhado por todos os apps do projeto.
+   static/styles/base.css
+   Complementa Bootstrap 5. Não duplica o que Bootstrap já faz.
    ========================================================== */
 
-/* ── Google Fonts ───────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+/* ── Google Fonts (carregado no <head>) ─────────────────── */
+/* Rajdhani 700 para o brand VITALIN | Inter para corpo     */
 
-/* ── Variáveis de design ────────────────────────────────── */
+/* ── Tokens de design ───────────────────────────────────── */
 :root {
-  /* Paleta de cores */
-  --color-primary:        #1A6FD4;
-  --color-primary-dark:   #1256A8;
-  --color-primary-light:  #4D93E8;
-  --color-primary-glow:   rgba(26, 111, 212, 0.18);
+  /* ── Paleta principal ────────────────────────────────────
+     Três tons de azul com papéis distintos e harmoniosos:
+     Marinho   #0B2E5E → brand, topbar, títulos, active
+     Royal     #1A52A8 → ícones, acentos, bordas ativas
+     Céu       #4287D6 → hover bg, badges info
+  ─────────────────────────────────────────────────────── */
+  --vt-navy:        #0B2E5E;
+  --vt-navy-deep:   #061D40;
+  --vt-royal:       #1A52A8;
+  --vt-sky:         #4287D6;
+  --vt-sky-tint:    rgba(26, 82, 168, 0.07);   /* hover bg suave   */
+  --vt-sky-tint-md: rgba(26, 82, 168, 0.13);   /* hover bg médio   */
 
-  --color-bg:             #0D1117;
-  --color-surface:        #161B22;
-  --color-surface-2:      #1F2733;
-  --color-border:         #2A3441;
-  --color-border-light:   #3A4758;
+  /* ── Superfícies ─────────────────────────────────────── */
+  --vt-white:       #FFFFFF;
+  --vt-surface:     #F3F6FB;   /* sidebar, footer, cards    */
+  --vt-topbar-bg:   #0B2E5E;   /* topbar = azul marinho     */
 
-  --color-text:           #E6EDF3;
-  --color-text-muted:     #8B9EB5;
-  --color-text-dim:       #4D6070;
+  /* ── Bordas ──────────────────────────────────────────── */
+  --vt-border:      #D2DCEE;
+  --vt-border-lt:   #E8EDF7;
 
-  /* Alturas fixas */
-  --topbar-height:  56px;
-  --navbar-height:  48px;
-  --sidebar-width:  240px;
-  --header-total:   calc(var(--topbar-height) + var(--navbar-height));
+  /* ── Tipografia ──────────────────────────────────────── */
+  --vt-text:        #1B2845;   /* corpo — preto azulado rico */
+  --vt-text-md:     #4A5B78;   /* secundário                 */
+  --vt-text-sm:     #8A97B2;   /* labels, muted              */
+  --vt-text-nav:    #354260;   /* links navbar — estado base */
 
-  /* Tipografia */
-  --font-mono: 'Space Mono', 'Courier New', monospace;
-  --font-body: 'Inter', system-ui, sans-serif;
+  /* ── Dimensões fixas ─────────────────────────────────── */
+  --vt-topbar-h:  58px;
+  --vt-navbar-h:  48px;
+  --vt-sidebar-w: 244px;
+  --vt-header:    calc(var(--vt-topbar-h) + var(--vt-navbar-h));
 
-  /* Transições */
-  --transition-fast: 0.15s ease;
-  --transition-base: 0.25s ease;
+  /* ── Tipografia ──────────────────────────────────────── */
+  --vt-font-brand: 'Rajdhani', 'Space Mono', 'Courier New', monospace;
+  --vt-font-body:  'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Sombras */
-  --shadow-topbar:   0 2px 16px rgba(0,0,0,.45);
-  --shadow-card:     0 4px 24px rgba(0,0,0,.35);
-  --shadow-dropdown: 0 8px 32px rgba(0,0,0,.55);
+  /* ── Transições ──────────────────────────────────────── */
+  --vt-t-fast: 140ms ease;
+  --vt-t-base: 220ms cubic-bezier(.4, 0, .2, 1);
+
+  /* ── Sombras ─────────────────────────────────────────── */
+  --vt-shadow-topbar:   0 2px 18px rgba(11, 46, 94, .28);
+  --vt-shadow-navbar:   0 1px 0 var(--vt-border), 0 2px 10px rgba(11, 46, 94, .05);
+  --vt-shadow-card:     0 2px 12px rgba(11, 46, 94, .07), 0 1px 3px rgba(11, 46, 94, .04);
+  --vt-shadow-dropdown: 0 4px 8px rgba(11, 46, 94, .07), 0 14px 36px rgba(11, 46, 94, .13);
 }
 
-/* ── Reset ──────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+/* ── Reset parcial ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  font-family: var(--vt-font-body);
+  background: var(--vt-white);
+  color: var(--vt-text);
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* ── TOPBAR ─────────────────────────────────────────────── */
+/* ==========================================================
+   TOPBAR — Azul marinho sólido, brand em branco
+   ========================================================== */
 .vt-topbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
-  height: var(--topbar-height);
-  z-index: 1000;
-  background: linear-gradient(90deg, #0A1628 0%, #0F1E38 50%, #0A1628 100%);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: var(--shadow-topbar);
+  inset: 0 0 auto 0;
+  height: var(--vt-topbar-h);
+  z-index: 1030;                        /* acima do Bootstrap navbar */
+  background-color: var(--vt-topbar-bg);
+  box-shadow: var(--vt-shadow-topbar);
   display: flex;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 28px;
+}
+
+.vt-topbar__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.vt-topbar__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--vt-white); /* Fundo branco caso a logo seja transparente com letras escuras */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: transform var(--vt-t-fast);
+}
+
+.vt-topbar__link:hover .vt-topbar__logo {
+  transform: scale(1.05);
 }
 
 .vt-topbar__brand {
-  font-family: var(--font-mono);
-  font-size: 1.35rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.6rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--color-primary-light);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: #FFFFFF;
   text-decoration: none;
-  text-shadow: 0 0 20px var(--color-primary-glow);
-  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+  opacity: .94;
+  transition: opacity var(--vt-t-fast), letter-spacing var(--vt-t-base);
+  display: inline-block;
   user-select: none;
+  /* Detalhe: linha inferior em azul-céu */
+  border-bottom: 2px solid rgba(66, 135, 214, .40);
+  padding-bottom: 1px;
+}
+.vt-topbar__link:hover .vt-topbar__brand {
+  color: #FFFFFF;
+  opacity: 1;
+  letter-spacing: .32em;
 }
 
-.vt-topbar__brand:hover {
-  color: #fff;
-  text-shadow: 0 0 28px rgba(77,147,232,.55);
-}
-
-/* ── NAVBAR ─────────────────────────────────────────────── */
+/* ==========================================================
+   NAVBAR — Branca, sombra sutil, dropdowns Bootstrap
+   ========================================================== */
 .vt-navbar {
   position: fixed;
-  top: var(--topbar-height);
+  top: var(--vt-topbar-h);
   left: 0; right: 0;
-  height: var(--navbar-height);
-  z-index: 999;
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  height: var(--vt-navbar-h);
+  z-index: 1029;
+  background: var(--vt-white);
+  box-shadow: var(--vt-shadow-navbar);
   display: flex;
   align-items: center;
-  padding: 0 16px;
-  gap: 4px;
+  padding: 0 20px;
+  gap: 0;
 }
 
-/* Itens da navbar */
-.vt-nav-item { position: relative; }
+.vt-navbar__modules {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
 
+/* ── Botões da navbar ──────────────────────────────────── */
 .vt-nav-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border: none;
+  gap: 7px;
+  padding: 7px 12px;
   background: transparent;
-  color: var(--color-text-muted);
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 500;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background var(--transition-fast), color var(--transition-fast);
-  white-space: nowrap;
-}
-
-.vt-nav-btn:hover,
-.vt-nav-item.open .vt-nav-btn {
-  background: var(--color-primary-glow);
-  color: var(--color-primary-light);
-}
-
-.vt-nav-btn .vt-icon { font-size: 1.05rem; line-height: 1; }
-
-.vt-nav-btn .vt-chevron {
-  font-size: 0.6rem;
-  transition: transform var(--transition-base);
-  margin-left: 2px;
-}
-
-.vt-nav-item.open .vt-chevron { transform: rotate(180deg); }
-
-/* Dropdown */
-.vt-dropdown {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  min-width: 200px;
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  box-shadow: var(--shadow-dropdown);
-  padding: 6px;
-  display: none;
-  z-index: 1100;
-  animation: dropdownIn var(--transition-base) forwards;
-}
-
-.vt-dropdown--right { left: auto; right: 0; }
-
-.vt-nav-item.open .vt-dropdown { display: block; }
-
-@keyframes dropdownIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.vt-dropdown__item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 12px;
+  border: none;
   border-radius: 7px;
-  color: var(--color-text-muted);
-  text-decoration: none;
-  font-size: 0.83rem;
+  color: var(--vt-text-nav);
+  font-family: var(--vt-font-body);
+  font-size: .83rem;
   font-weight: 500;
-  transition: background var(--transition-fast), color var(--transition-fast);
+  letter-spacing: .01em;
+  line-height: 1;
   cursor: pointer;
-  border: none;
-  background: transparent;
-  width: 100%;
-  text-align: left;
+  white-space: nowrap;
+  transition: background var(--vt-t-fast), color var(--vt-t-fast),
+              box-shadow var(--vt-t-fast);
+}
+.vt-nav-btn:hover,
+.vt-nav-btn:focus-visible {
+  background: var(--vt-sky-tint);
+  color: var(--vt-navy);
+  outline: none;
 }
 
-.vt-dropdown__item:hover {
-  background: var(--color-primary-glow);
-  color: var(--color-text);
+/* Variante especial: Minha Unidade */
+.vt-nav-btn--unit {
+  color: var(--vt-navy);
+  font-weight: 600;
+  background: var(--vt-sky-tint);
+  border: 1px solid var(--vt-border);
+}
+.vt-nav-btn--unit:hover,
+.vt-nav-btn--unit:focus-visible {
+  background: var(--vt-sky-tint-md);
+  color: var(--vt-navy);
+  border-color: var(--vt-royal);
+}
+.vt-nav-btn--unit .vt-icon {
+  color: var(--vt-royal);
 }
 
-.vt-dropdown__item .vt-icon {
-  font-size: 1rem;
-  color: var(--color-primary);
+/* Separador vertical entre Minha Unidade e os módulos */
+.vt-navbar__sep {
+  display: inline-block;
+  width: 1px;
+  height: 22px;
+  background: var(--vt-border);
+  margin: 0 6px;
   flex-shrink: 0;
 }
 
-.vt-dropdown__divider {
-  border: none;
-  border-top: 1px solid var(--color-border);
-  margin: 4px 0;
+/* Estado aberto — Bootstrap seta aria-expanded="true" diretamente no botão
+   (mais confiável que .dropdown.show >) */
+.vt-nav-btn[aria-expanded="true"] {
+  background: var(--vt-sky-tint-md);
+  color: var(--vt-navy);
+  /* Linha-indicador inferior em azul royal */
+  box-shadow: inset 0 -2px 0 var(--vt-royal);
 }
 
-/* Bloco de info do usuário no dropdown de perfil */
-.vt-dropdown__user-info {
-  padding: 8px 12px 6px;
-  font-size: 0.78rem;
-  color: var(--color-text-muted);
+/* ── Ícones e chevron ──────────────────────────────────── */
+.vt-nav-btn .vt-icon {
+  font-size: 1rem;
+  color: var(--vt-royal);
+  flex-shrink: 0;
+  transition: transform var(--vt-t-base), color var(--vt-t-fast);
+}
+.vt-nav-btn:hover .vt-icon {
+  transform: translateY(-1.5px);
+}
+/* Ícone principal — fica azul marinho e levanta quando dropdown abre */
+.vt-nav-btn[aria-expanded="true"] .vt-icon {
+  color: var(--vt-navy) !important;
+  transform: translateY(-1.5px);
 }
 
-.vt-dropdown__user-name {
-  color: var(--color-text);
+.vt-nav-btn .vt-chevron {
+  font-size: .58rem;
+  opacity: .5;
+  transition: transform var(--vt-t-base), opacity var(--vt-t-fast);
+}
+/* Bootstrap seta aria-expanded="true" no botão quando dropdown abre */
+.vt-nav-btn[aria-expanded="true"] .vt-chevron {
+  transform: rotate(180deg);
+  opacity: .80;
+}
+
+/* ==========================================================
+   DROPDOWN — Override Bootstrap com identidade VITALIN
+   ========================================================== */
+.vt-dropdown.dropdown-menu {
+  min-width: 240px;
+  padding: 0;
+  background-color: #FFFFFF;
+  border: 1px solid var(--vt-border);
+  border-radius: 10px;
+  box-shadow: var(--vt-shadow-dropdown);
+  overflow: hidden;
+  z-index: 1035;
+  animation: vtDropIn .16s ease both;
+  max-width: calc(100vw - 20px);
+}
+
+/* Dropdown do perfil (canto superior direito): posiciona alinhado à direita */
+#nav-perfil .vt-dropdown.dropdown-menu {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* Dropdowns da navbar abrem alinhados à esquerda do botão ativo (exceto o perfil) */
+.vt-navbar .vt-dropdown.dropdown-menu:not(.dropdown-menu-end) {
+  left: 0 !important;
+  right: auto !important;
+}
+
+/* Faixa topo — gradiente azul marinho → royal */
+.vt-dropdown.dropdown-menu::before {
+  content: '';
   display: block;
-  font-weight: 600;
-  margin-bottom: 2px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--vt-navy) 0%, var(--vt-sky) 100%);
 }
 
-.vt-navbar__spacer { flex: 1; }
+/* Padding interno nos itens */
+.vt-dropdown.dropdown-menu > li {
+  padding: 3px 5px;
+}
+.vt-dropdown.dropdown-menu > li:first-child {
+  padding-top: 4px;
+}
+.vt-dropdown.dropdown-menu > li:last-child {
+  padding-bottom: 5px;
+}
+/* Sem padding extra em divisores */
+.vt-dropdown.dropdown-menu > li:has(hr) {
+  padding: 0 5px;
+}
 
-.vt-navbar__actions { display: flex; align-items: center; gap: 4px; }
+/* Sem transform — Popper.js já cuida do posicionamento via translate3d */
+@keyframes vtDropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+/* ── Itens do dropdown ─────────────────────────────────── */
+.vt-dropdown__item.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 7px;
+  color: var(--vt-text);
+  font-size: .83rem;
+  font-weight: 500;
+  line-height: 1.3;
+  transition: background var(--vt-t-fast), color var(--vt-t-fast);
+  white-space: nowrap;
+}
+.vt-dropdown__item.dropdown-item:hover,
+.vt-dropdown__item.dropdown-item:focus {
+  background: var(--vt-sky-tint);
+  color: var(--vt-navy);
+}
+.vt-dropdown__item.dropdown-item .vt-icon {
+  font-size: .95rem;
+  color: var(--vt-royal);
+  flex-shrink: 0;
+  transition: transform var(--vt-t-base);
+}
+.vt-dropdown__item.dropdown-item:hover .vt-icon {
+  transform: translateY(-1.5px);
+}
+
+/* Divisor */
+.dropdown-divider {
+  border-color: var(--vt-border-lt);
+  margin: 3px 0;
+}
+
+/* ── Info do usuário no dropdown de perfil ─────────────── */
+.vt-dropdown__user-info {
+  padding: 10px 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.vt-dropdown__user-name {
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--vt-navy);
+  line-height: 1.2;
+}
+.vt-dropdown__user-email {
+  font-size: .75rem;
+  color: var(--vt-text-sm);
+}
+
+/* ==========================================================
+   NAVBAR — Ações direita (busca, notificações, avatar)
+   ========================================================== */
+.vt-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 
 .vt-navbar__action-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 34px; height: 34px;
-  border: none;
+  padding: 0;
   background: transparent;
-  color: var(--color-text-muted);
+  border: none;
   border-radius: 8px;
-  cursor: pointer;
+  color: var(--vt-text-md);
   font-size: 1rem;
-  transition: background var(--transition-fast), color var(--transition-fast);
+  cursor: pointer;
+  transition: background var(--vt-t-fast), color var(--vt-t-fast), transform var(--vt-t-base);
 }
-
 .vt-navbar__action-btn:hover {
-  background: var(--color-primary-glow);
-  color: var(--color-primary-light);
+  background: var(--vt-sky-tint);
+  color: var(--vt-royal);
+  transform: translateY(-1.5px);
 }
 
+/* Avatar — fundo branco, borda cromática azul (conic-gradient) */
 .vt-avatar {
-  width: 32px; height: 32px;
+  width: 36px; height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-  border: 2px solid var(--color-primary-light);
+  /* Fundo branco com borda cromática usando outline + box-shadow em camadas */
+  background: #FFFFFF;
+  /* Borda cromada: conic-gradient via box-shadow duplo e border */
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  /* Simula borda cromática azul com box-shadow multicamada */
+  box-shadow:
+    0 0 0 2px var(--vt-royal),           /* borda sólida azul royal */
+    0 0 0 3px rgba(66, 135, 214, .35),   /* halo externo azul-céu */
+    0 0 8px rgba(26, 82, 168, .25);      /* brilho cromado */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-family: var(--vt-font-body);
+  font-size: .78rem;
   font-weight: 700;
-  color: #fff;
+  /* Letra e ícone em azul navy (sobre fundo branco) */
+  color: var(--vt-navy);
   cursor: pointer;
-  transition: box-shadow var(--transition-fast);
+  transition: transform var(--vt-t-base), box-shadow var(--vt-t-fast);
+  user-select: none;
+}
+.vt-avatar:hover {
+  transform: translateY(-1.5px);
+  box-shadow:
+    0 0 0 2px var(--vt-royal),
+    0 0 0 3.5px rgba(66, 135, 214, .50),
+    0 0 14px rgba(26, 82, 168, .35);
 }
 
-.vt-avatar:hover { box-shadow: 0 0 0 3px var(--color-primary-glow); }
+/* ==========================================================
+   MENSAGENS DJANGO — Toast sobreposto (Bootstrap alert)
+   ========================================================== */
+.vt-messages {
+  position: fixed;
+  top: calc(var(--vt-header) + 16px);
+  right: 20px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 360px;
+  width: 100%;
+}
 
-/* ── LAYOUT ─────────────────────────────────────────────── */
+.vt-alert.alert {
+  font-family: var(--vt-font-body);
+  font-size: .84rem;
+  font-weight: 500;
+  border-radius: 10px;
+  border-left-width: 4px;
+  box-shadow: var(--vt-shadow-card);
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+}
+
+/* ==========================================================
+   LAYOUT — Sidebar + Main
+   ========================================================== */
 .vt-layout {
   display: flex;
   min-height: 100vh;
-  padding-top: var(--header-total);
+  padding-top: var(--vt-header);
 }
 
-/* ── SIDEBAR ────────────────────────────────────────────── */
+/* ==========================================================
+   SIDEBAR
+   ========================================================== */
 .vt-sidebar {
   position: fixed;
-  top: var(--header-total);
+  top: var(--vt-header);
   left: 0; bottom: 0;
-  width: var(--sidebar-width);
-  background: var(--color-surface);
-  border-right: 1px solid var(--color-border);
+  width: var(--vt-sidebar-w);
+  /* Fundo azul claro — card flutua sobre ele */
+  background: linear-gradient(180deg, #BFDBFF 0%, #A8CBFF 100%);
+  border-right: none;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 20px 12px;
+  padding: 12px 8px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  z-index: 1025;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-border) transparent;
+  scrollbar-color: rgba(26, 82, 168, .30) transparent;
 }
-
 .vt-sidebar::-webkit-scrollbar { width: 4px; }
-.vt-sidebar::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
-
-.vt-sidebar__section-title {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-dim);
-  padding: 0 8px;
-  margin-bottom: 8px;
+.vt-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(26, 82, 168, .28);
+  border-radius: 4px;
 }
 
+/* ── Card flutuante ────────────────────────────────── */
+.vt-sidebar__card {
+  flex: 1;
+  /* Branco puro — flutua visivelmente sobre o sidebar azul claro */
+  background: #FFFFFF;
+  border: 1px solid rgba(66, 135, 214, .20);
+  border-radius: 14px;
+  box-shadow:
+    0 3px 16px rgba(26, 82, 168, .16),
+    0 1px 4px  rgba(26, 82, 168, .08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 16px 10px 12px;
+  gap: 14px;
+  animation: vtCardIn .30s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes vtCardIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Título da seção */
+.vt-sidebar__section-title {
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: var(--vt-text-sm);
+  padding: 0 10px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Lista de links */
 .vt-sidebar__nav {
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .vt-sidebar__nav-link {
@@ -304,230 +531,210 @@ body {
   align-items: center;
   gap: 10px;
   padding: 9px 10px;
-  border-radius: 8px;
-  color: var(--color-text-muted);
-  text-decoration: none;
-  font-size: 0.84rem;
+  border-radius: 7px;
+  color: var(--vt-text-nav);
+  font-size: .84rem;
   font-weight: 500;
-  transition: background var(--transition-fast), color var(--transition-fast), padding-left var(--transition-fast);
+  text-decoration: none;
+  transition: background var(--vt-t-fast), color var(--vt-t-fast),
+              padding-left var(--vt-t-fast);
 }
-
 .vt-sidebar__nav-link:hover {
-  background: var(--color-primary-glow);
-  color: var(--color-text);
+  background: var(--vt-sky-tint);
+  color: var(--vt-royal);
   padding-left: 14px;
 }
-
 .vt-sidebar__nav-link.active {
-  background: linear-gradient(90deg, var(--color-primary-glow), transparent);
-  color: var(--color-primary-light);
-  border-left: 3px solid var(--color-primary);
+  background: rgba(26, 82, 168, .11);
+  color: var(--vt-navy);
+  font-weight: 600;
+  border-left: 3px solid var(--vt-navy);
   padding-left: 7px;
 }
-
-.vt-sidebar__nav-link .vt-icon { font-size: 1rem; flex-shrink: 0; }
-
-/* Info card na sidebar */
-.vt-info-card {
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 14px 12px;
+.vt-sidebar__nav-link .vt-icon {
+  font-size: 1rem;
+  color: var(--vt-royal);
+  flex-shrink: 0;
+  transition: transform var(--vt-t-base);
 }
-
-.vt-info-card__title {
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-primary);
-  margin-bottom: 10px;
+.vt-sidebar__nav-link:hover .vt-icon,
+.vt-sidebar__nav-link.active .vt-icon {
+  transform: translateY(-1.5px);
 }
-
-.vt-info-card__row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 0;
-  border-bottom: 1px solid var(--color-border);
-  font-size: 0.78rem;
-}
-
-.vt-info-card__row:last-child { border-bottom: none; }
-
-.vt-info-card__label { color: var(--color-text-muted); }
-.vt-info-card__value { color: var(--color-text); font-weight: 600; }
 
 .vt-sidebar__spacer { flex: 1; }
 
+.vt-sidebar__card-footer {
+  padding-top: 10px;
+  border-top: 1px solid var(--vt-border-lt);
+  font-size: .71rem;
+  color: var(--vt-text-sm);
+  text-align: center;
+  font-family: var(--vt-font-brand);
+  letter-spacing: .06em;
+}
+
+/* Footer antigo — mantido para compatibilidade caso seja usado fora do card */
 .vt-sidebar__footer {
   padding-top: 12px;
-  border-top: 1px solid var(--color-border);
-  font-size: 0.72rem;
-  color: var(--color-text-dim);
+  border-top: 1px solid var(--vt-border-lt);
+  font-size: .71rem;
+  color: var(--vt-text-sm);
   text-align: center;
+  font-family: var(--vt-font-brand);
+  letter-spacing: .06em;
 }
 
-/* ── CONTEÚDO PRINCIPAL ─────────────────────────────────── */
+/* ==========================================================
+   MAIN — Conteúdo principal
+   ========================================================== */
 .vt-main {
-  margin-left: var(--sidebar-width);
+  margin-left: var(--vt-sidebar-w);
   flex: 1;
-  min-height: calc(100vh - var(--header-total));
-  padding: 28px 32px;
-  background: var(--color-bg);
+  min-height: calc(100vh - var(--vt-header));
+  padding: 0 34px 30px;
+  background: var(--vt-white);
+  border-top-left-radius: 14px;
+  /* Sem box-shadow: eliminava linha azul no topo do conteúdo */
 }
 
-/* Cabeçalho de página */
+/* Cabeçalho de página — sticky: fica fixo abaixo do navbar ao rolar */
 .vt-page-header {
-  margin-bottom: 28px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: var(--vt-header);
+  z-index: 50;
+  background: var(--vt-white);
+  margin: 0 -34px 24px;
+  /* padding-top 14px: afasta o título do navbar */
+  /* padding-bottom 12px: aproxima a linha do subtítulo */
+  padding: 5px 34px 8px;
+  border-bottom: none;
+}
+
+/* Linha decorativa imediatamente abaixo do título */
+.vt-page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 34px;                     /* alinha com o padding do header */
+  width: calc(60% - 34px);
+  max-width: 440px;
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(
+    to left,
+    var(--vt-royal) 0%,
+    var(--vt-sky)   50%,
+    transparent    100%
+  );
 }
 
 .vt-page-header__breadcrumb {
-  font-size: 0.75rem;
-  color: var(--color-text-dim);
+  font-size: .73rem;
+  color: var(--vt-text-sm);
   margin-bottom: 6px;
   display: flex;
   align-items: center;
   gap: 6px;
+  letter-spacing: .01em;
+}
+.vt-page-header__breadcrumb a {
+  color: var(--vt-royal);
+  text-decoration: none;
+  transition: color var(--vt-t-fast);
+}
+.vt-page-header__breadcrumb a:hover { color: var(--vt-navy); text-decoration: underline; }
+
+/* Título moderno e elegante com gradiente de cor */
+.vt-page-header__title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -.028em;
+  line-height: 1.15;
+  display: block;
+  margin: 0 0 10px 0;
+  background: linear-gradient(100deg, var(--vt-navy) 10%, var(--vt-royal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.vt-page-header__breadcrumb a { color: var(--color-primary); text-decoration: none; }
-.vt-page-header__breadcrumb a:hover { text-decoration: underline; }
-
-.vt-page-header__title {
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: var(--color-primary-light);
-  letter-spacing: -0.01em;
+/* H1 vazio não gera gap visual — colapsa altura e margem */
+.vt-page-header__title:empty {
+  display: none;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 .vt-page-header__subtitle {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
+  font-size: .84rem;
+  color: var(--vt-text-md);
   margin-top: 4px;
+  margin-bottom: 0; /* Remove a margem padrão da tag <p> para que a linha fique mais próxima */
+  font-weight: 400;
+  letter-spacing: .005em;
 }
 
-/* ── MENSAGENS DJANGO ───────────────────────────────────── */
-.vt-messages {
-  position: fixed;
-  top: calc(var(--header-total) + 16px);
-  right: 20px;
-  z-index: 2000;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 360px;
-}
-
-.vt-alert {
-  padding: 12px 16px;
-  border-radius: 10px;
-  font-size: 0.84rem;
-  font-weight: 500;
-  border-left: 4px solid;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  animation: alertIn 0.3s ease;
-  background: var(--color-surface-2);
-  box-shadow: var(--shadow-card);
-}
-
-@keyframes alertIn {
-  from { opacity: 0; transform: translateX(20px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
-.vt-alert--success { border-color: #2EA84F; color: #5BCA7A; }
-.vt-alert--error   { border-color: #D0424A; color: #F07077; }
-.vt-alert--warning { border-color: #D4851A; color: #F5A63A; }
-.vt-alert--info    { border-color: var(--color-primary); color: var(--color-primary-light); }
-
-.vt-alert__close {
-  margin-left: auto;
-  background: none;
-  border: none;
-  color: inherit;
-  opacity: 0.6;
-  cursor: pointer;
-  font-size: 1rem;
-  line-height: 1;
-  padding: 0 2px;
-  flex-shrink: 0;
-}
-
-.vt-alert__close:hover { opacity: 1; }
-
-/* ── BADGES ─────────────────────────────────────────────── */
+/* ==========================================================
+   BADGES
+   ========================================================== */
 .vt-badge {
   display: inline-flex;
   align-items: center;
-  padding: 2px 8px;
+  padding: 2px 9px;
   border-radius: 20px;
-  font-size: 0.7rem;
+  font-size: .7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: .05em;
 }
+.vt-badge--primary { background: var(--vt-sky-tint-md); color: var(--vt-navy); }
+.vt-badge--success { background: rgba(25,135,84,.12);    color: #0f5132; }
+.vt-badge--danger  { background: rgba(220,53,69,.12);    color: #842029; }
 
-.vt-badge--primary { background: var(--color-primary-glow); color: var(--color-primary-light); }
-.vt-badge--success { background: rgba(46,168,79,.15); color: #5BCA7A; }
-.vt-badge--danger  { background: rgba(208,66,74,.15); color: #F07077; }
-
-/* ── RESPONSIVO ─────────────────────────────────────────── */
-@media (max-width: 900px) {
-  :root { --sidebar-width: 200px; }
-  .vt-main { padding: 20px 18px; }
-}
-
-@media (max-width: 720px) {
-  .vt-sidebar { display: none; }
-  .vt-main    { margin-left: 0; }
-}
-
-/* ── RODAPÉ GLOBAL ──────────────────────────────────────── */
+/* ==========================================================
+   RODAPÉ GLOBAL
+   ========================================================== */
 .vt-footer {
-  margin-left: var(--sidebar-width);
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
-  padding: 14px 32px;
+  margin-left: var(--vt-sidebar-w);
+  background: var(--vt-surface);
+  border-top: 1px solid var(--vt-border);
+  padding: 12px 34px;
 }
-
 .vt-footer__inner {
   display: flex;
   align-items: center;
   gap: 10px;
   justify-content: center;
 }
-
 .vt-footer__brand {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-family: var(--vt-font-brand);
+  font-size: .78rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--color-primary-light);
+  letter-spacing: .16em;
+  color: var(--vt-navy);
 }
-
-.vt-footer__separator {
-  color: var(--color-border-light);
-  font-size: 0.75rem;
-}
-
+.vt-footer__sep  { color: var(--vt-border); font-size: .75rem; }
 .vt-footer__tagline {
-  font-size: 0.8rem;
+  font-size: .78rem;
   font-weight: 500;
-  color: var(--color-text-muted);
-  letter-spacing: 0.03em;
+  color: var(--vt-text-md);
 }
-
 .vt-footer__copy {
-  font-size: 0.72rem;
-  color: var(--color-text-dim);
-  margin-left: 8px;
+  font-size: .71rem;
+  color: var(--vt-text-sm);
 }
 
+/* ==========================================================
+   RESPONSIVO
+   ========================================================== */
+@media (max-width: 900px) {
+  :root { --vt-sidebar-w: 200px; }
+  .vt-main { padding: 20px 20px; }
+}
 @media (max-width: 720px) {
-  .vt-footer { margin-left: 0; padding: 12px 16px; }
+  .vt-sidebar { display: none; }
+  .vt-main    { margin-left: 0; }
+  .vt-footer  { margin-left: 0; padding: 10px 16px; }
 }
