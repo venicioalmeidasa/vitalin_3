@@ -595,7 +595,13 @@ body {
   padding: 0 34px 30px;
   background: var(--vt-white);
   border-top-left-radius: 14px;
-  /* Sem box-shadow: eliminava linha azul no topo do conteúdo */
+  transition: margin-left var(--vt-t-base);
+}
+
+/* Quando não houver sidebar, o main ocupa todo o espaço */
+body:not(:has(.vt-sidebar)) .vt-main {
+  margin-left: 0;
+  border-top-left-radius: 0;
 }
 
 /* Cabeçalho de página — sticky: fica fixo abaixo do navbar ao rolar */
@@ -701,6 +707,11 @@ body {
   background: var(--vt-surface);
   border-top: 1px solid var(--vt-border);
   padding: 12px 34px;
+  transition: margin-left var(--vt-t-base);
+}
+
+body:not(:has(.vt-sidebar)) .vt-footer {
+  margin-left: 0;
 }
 .vt-footer__inner {
   display: flex;
@@ -724,6 +735,210 @@ body {
 .vt-footer__copy {
   font-size: .71rem;
   color: var(--vt-text-sm);
+}
+
+/* ==========================================================
+   SIDEBAR UNIDADE DE SAÚDE (REUSÁVEL)
+   ========================================================== */
+.vt-unidade-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px; /* Aproxima da borda superior */
+  margin-bottom: 24px;
+}
+
+.vt-unidade-badge {
+  align-self: flex-start;
+  margin-bottom: 16px;
+  text-transform: none; /* Permite uso normal de maiúsculas/minúsculas */
+}
+
+.vt-unidade-avatar {
+  width: 60px; 
+  height: 60px;
+  font-size: 1.6rem;
+  box-shadow: 0 0 0 1px var(--vt-sky), 0 0 0 3px var(--vt-sky-tint);
+  background-color: var(--vt-white);
+  color: var(--vt-navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px auto;
+}
+
+.vt-unidade-title {
+  color: var(--vt-navy);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.vt-unidade-cnes {
+  color: var(--vt-text-md);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.vt-unidade-email-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px;
+  margin-bottom: 24px;
+}
+
+.vt-unidade-email-icon {
+  width: 20px;
+  height: 20px;
+  background-color: var(--vt-sky-tint);
+  color: var(--vt-royal);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.vt-unidade-email-text {
+  font-size: 0.60rem; /* Texto do email diminuído */
+  font-weight: 600;
+  color: var(--vt-text);
+  word-break: break-all;
+  line-height: 1.2;
+}
+
+/* ==========================================================
+   CARDS DE LISTAGEM (UNIDADES/DISTRITOS)
+   ========================================================== */
+.vt-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.vt-card-unit {
+  display: flex;
+  flex-direction: column;
+  background: var(--vt-white);
+  border: 1px solid var(--vt-border);
+  border-radius: 14px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--vt-t-base), box-shadow var(--vt-t-base), border-color var(--vt-t-base);
+  box-shadow: 0 4px 12px rgba(11, 46, 94, .03);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.vt-card-unit:hover, .vt-card-unit:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(11, 46, 94, .12);
+  border-color: var(--vt-royal);
+  outline: none;
+}
+
+/* O efeito de decalque/brilho foi removido conforme solicitação */
+
+.vt-card-unit__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.vt-card-unit__icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background-color: var(--vt-sky-tint);
+  color: var(--vt-royal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  transition: background-color var(--vt-t-base), color var(--vt-t-base), transform var(--vt-t-base);
+}
+
+.vt-card-unit:hover .vt-card-unit__icon {
+  background-color: var(--vt-royal);
+  color: var(--vt-white);
+  transform: scale(1.05);
+}
+
+.vt-card-unit__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--vt-navy);
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.vt-card-unit__subtitle {
+  font-size: 0.75rem;
+  color: var(--vt-text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.vt-card-unit__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto; /* Empurra para o fundo se houver variação de altura */
+}
+
+.vt-card-unit__info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--vt-text-md);
+  font-weight: 500;
+}
+
+.vt-card-unit__info-icon {
+  color: var(--vt-royal);
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.vt-card-unit__action {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--vt-border-lt);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--vt-royal);
+  transition: color var(--vt-t-base);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.vt-card-unit:hover .vt-card-unit__action {
+  color: var(--vt-navy);
+}
+
+.vt-card-unit__action-icon {
+  font-size: 1.1rem;
+  transition: transform var(--vt-t-base);
+}
+
+.vt-card-unit:hover .vt-card-unit__action-icon {
+  transform: translateX(4px);
 }
 
 /* ==========================================================

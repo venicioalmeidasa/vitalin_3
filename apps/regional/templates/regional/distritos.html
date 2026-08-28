@@ -5,11 +5,10 @@
 {% block page_title %}Distritos{% endblock page_title %}
 
 {% block page_subtitle %}
-Listagem dos Distritos Regionais
+Listagem dos Distritos Regionais - {{ num_distritos }} unidades
 {% endblock page_subtitle %}
 
 {% block content %}
-    {% for distrito in distritos %}
-        {{ distrito }}
-    {% endfor %}
+{% include 'includes/_cards_estabelecimento.html' with unidades=distritos url_unidade='regional:distrito' icone='bi bi-pin-map-fill' msg_vazio='Nenhum distrito sanitário cadastrado.' only%}
+
 {% endblock content %}

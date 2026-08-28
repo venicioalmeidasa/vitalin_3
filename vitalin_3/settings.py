@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #vitalin_3
+    'core',
     'apps.regional',
+    'apps.assistencial'
 ]
 
 MIDDLEWARE = [
@@ -60,6 +62,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            BASE_DIR / 'templates',
             BASE_DIR / 'core' / 'templates',
         ],
         'APP_DIRS': True,

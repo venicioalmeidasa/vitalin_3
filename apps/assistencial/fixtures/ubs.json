@@ -1,0 +1,830 @@
+[
+    {
+        "model": "assistencial.ubs",
+        "pk": "2037262",
+        "fields": {
+            "nome": "Aeroporto",
+            "nome_oficial": "",
+            "email": "saude.csjdaeroporto@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "aeroporto"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022931",
+        "fields": {
+            "nome": "Balão do Laranja",
+            "nome_oficial": "Dr. Pedro Agápio de Aquino Netto",
+            "email": "saude.csbalaolaranja@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "balão-do-laranja"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022664",
+        "fields": {
+            "nome": "Barão Geraldo",
+            "nome_oficial": "Attílio Vicentin",
+            "email": "saude.csbaraogeraldo@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "barão-geraldo"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6028179",
+        "fields": {
+            "nome": "Boa Esperança",
+            "nome_oficial": "",
+            "email": "saude.csboaesperanca@campinas.sp.gov.br",
+            "distrito": "7774672",
+            "data_cadastro": "2026-08-28",
+            "slug": "boa-esperança"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6032141",
+        "fields": {
+            "nome": "Campina Grande",
+            "nome_oficial": "Luzia Bento Cavalcante",
+            "email": "sms.cscampinagrande@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "campina-grande"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6032605",
+        "fields": {
+            "nome": "Campo Belo",
+            "nome_oficial": "",
+            "email": "saude.psfcampobelo@campinas.sp.gov.br",
+            "distrito": "9555838",
+            "data_cadastro": "2026-08-28",
+            "slug": "campo-belo"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022613",
+        "fields": {
+            "nome": "Campos Elíseos",
+            "nome_oficial": "Tancredo Neves",
+            "email": "saude.cstancredoneves@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "campos-elíseos"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6028195",
+        "fields": {
+            "nome": "Carlos Gomes",
+            "nome_oficial": "Maria Ananias Ferreira de Souza",
+            "email": "saude.cscarlosgomes@campinas.sp.gov.br",
+            "distrito": "7774672",
+            "data_cadastro": "2026-08-28",
+            "slug": "carlos-gomes"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023083",
+        "fields": {
+            "nome": "Carvalho de Moura",
+            "nome_oficial": "",
+            "email": "saude.cscarvalhomoura@campinas.sp.gov.br",
+            "distrito": "9555838",
+            "data_cadastro": "2026-08-28",
+            "slug": "carvalho-de-moura"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022729",
+        "fields": {
+            "nome": "Centro",
+            "nome_oficial": "Mário de Campos Bueno Júnior",
+            "email": "saude.cscentro@campinas.sp.gov.br",
+            "distrito": "7774672",
+            "data_cadastro": "2026-08-28",
+            "slug": "centro"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2032643",
+        "fields": {
+            "nome": "DIC I",
+            "nome_oficial": "Maria Cecília Ramos de Oliveira",
+            "email": "saude.csdic1@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "dic-i"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2046318",
+        "fields": {
+            "nome": "DIC III",
+            "nome_oficial": "Dr. Manoel Affonso Ferreira",
+            "email": "saude.csdic3@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "dic-iii"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "9725393",
+        "fields": {
+            "nome": "DIC VI",
+            "nome_oficial": "Antonia Bersi",
+            "email": "sms.csdic6@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "dic-vi"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "3950220",
+        "fields": {
+            "nome": "Doutor Cássio Menezes Raposo do Amaral",
+            "nome_oficial": "",
+            "email": "saude.cscassioraposo@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "doutor-cássio-menezes-raposo-do-amaral"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022842",
+        "fields": {
+            "nome": "Integração",
+            "nome_oficial": "Nair dos Santos Braz",
+            "email": "sms.csintegracao@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "integração"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "3190188",
+        "fields": {
+            "nome": "Itajaí",
+            "nome_oficial": "Jencabema Fenz Elizabeth",
+            "email": "saude.csitajai@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "itajaí"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022672",
+        "fields": {
+            "nome": "Jardim Aurélia",
+            "nome_oficial": "Dr. Estimado Domingues",
+            "email": "saude.csjdaurelia@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-aurélia"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "411191",
+        "fields": {
+            "nome": "Jardim Bassoli",
+            "nome_oficial": "Dr. José Archimedes Pedroso Meloni",
+            "email": "sms.csjdbassoli@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-bassoli"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2039664",
+        "fields": {
+            "nome": "Jardim Capivari",
+            "nome_oficial": "Dr. Armando Rocha Brito Júnior",
+            "email": "saude.csjdcapivari@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-capivari"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023164",
+        "fields": {
+            "nome": "Jardim Conceição",
+            "nome_oficial": "Antônio da Costa Santos",
+            "email": "saude.csconceicao@campinas.sp.gov.br",
+            "distrito": "7774672",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-conceição"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022796",
+        "fields": {
+            "nome": "Jardim Esmeraldina",
+            "nome_oficial": "José Batista",
+            "email": "saude.csjdesmeraldina@campinas.sp.gov.br",
+            "distrito": "4252241",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-esmeraldina"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023156",
+        "fields": {
+            "nome": "Jardim Eulina",
+            "nome_oficial": "Dr. Laerte de Moraes",
+            "email": "saude.csjdeulina@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-eulina"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6032338",
+        "fields": {
+            "nome": "Jardim Fernanda",
+            "nome_oficial": "Dom Bruno Gamberini",
+            "email": "saude.psfjdfernanda@campinas.sp.gov.br",
+            "distrito": "9555838",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-fernanda"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022850",
+        "fields": {
+            "nome": "Jardim Florence",
+            "nome_oficial": "Dr. João Gumercindo Guimarães",
+            "email": "saude.csjdflorence@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-florence"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "4245687",
+        "fields": {
+            "nome": "Jardim Guanabara",
+            "nome_oficial": "",
+            "email": "sms.csguanabara@campinas.sp.gov.br",
+            "distrito": "7774672",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-guanabara"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022923",
+        "fields": {
+            "nome": "Jardim Ipaussurama",
+            "nome_oficial": "Professora Ângela de Campos Trentin",
+            "email": "saude.csjdipaussurama@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-ipaussurama"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2037270",
+        "fields": {
+            "nome": "Jardim Itatinga",
+            "nome_oficial": "Santos Dumont",
+            "email": "saude.cssantosdumont@campinas.sp.gov.br",
+            "distrito": "9555838",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-itatinga"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6032362",
+        "fields": {
+            "nome": "Jardim Lisa",
+            "nome_oficial": "José Carlos Tenório",
+            "email": "sms.cslisa@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-lisa"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022869",
+        "fields": {
+            "nome": "Jardim Paranapanema",
+            "nome_oficial": "Dr. Manoel Rios Muraro",
+            "email": "saude.csjdparanapanema@campinas.sp.gov.br",
+            "distrito": "4252241",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-paranapanema"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "9294481",
+        "fields": {
+            "nome": "Jardim San Diego",
+            "nome_oficial": "Geraldo Elias",
+            "email": "sms.cssandiego@campinas.sp.gov.br",
+            "distrito": "9555838",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-san-diego"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2033941",
+        "fields": {
+            "nome": "Jardim Santa Lúcia",
+            "nome_oficial": "Renato Paulo Henry",
+            "email": "saude.cssantalucia@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-santa-lúcia"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023172",
+        "fields": {
+            "nome": "Jardim Santa Mônica",
+            "nome_oficial": "Amadeu Mendes dos Santos",
+            "email": "saude.csjdsantamonica@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-santa-mônica"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022680",
+        "fields": {
+            "nome": "Jardim Santa Odila",
+            "nome_oficial": "Sebastião de Moraes",
+            "email": "saude.cssantaodila@campinas.sp.gov.br",
+            "distrito": "4252241",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-santa-odila"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2034263",
+        "fields": {
+            "nome": "Jardim São Cristóvão",
+            "nome_oficial": "Ana Rodrigues Matoso",
+            "email": "sms.cssaocristovao@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-são-cristóvão"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023318",
+        "fields": {
+            "nome": "Jardim São Marcos",
+            "nome_oficial": "Joana Julia de Rezende Tripoloni",
+            "email": "saude.csjdsaomarcos@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-são-marcos"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022915",
+        "fields": {
+            "nome": "Jardim São Vicente",
+            "nome_oficial": "Dr. Paulo de Camargo Ferraz",
+            "email": "saude.csjdsaovicente@campinas.sp.gov.br",
+            "distrito": "4252241",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-são-vicente"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6032478",
+        "fields": {
+            "nome": "Jardim Satélite Íris",
+            "nome_oficial": "Dra. Veridiana Toledo Nascimento",
+            "email": "saude.psfsateliteiris@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-satélite-íris"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2039656",
+        "fields": {
+            "nome": "Jardim Vista Alegre",
+            "nome_oficial": "Dr. Cláudio Luiz da Silva Braga",
+            "email": "saude.csvistaalegre@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "jardim-vista-alegre"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023210",
+        "fields": {
+            "nome": "Joaquim Egídio",
+            "nome_oficial": "José Ignácio Júnior",
+            "email": "saude.csjoaquimegidio@campinas.sp.gov.br",
+            "distrito": "4252241",
+            "data_cadastro": "2026-08-28",
+            "slug": "joaquim-egídio"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6032397",
+        "fields": {
+            "nome": "Nova América",
+            "nome_oficial": "Francisco Alves dos Santos",
+            "email": "saude.csnovaamerica@campinas.sp.gov.br",
+            "distrito": "9555838",
+            "data_cadastro": "2026-08-28",
+            "slug": "nova-américa"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022818",
+        "fields": {
+            "nome": "Parque da Figueira",
+            "nome_oficial": "Jaime Cesar Correa Lima",
+            "email": "saude.cspqdafigueira@campinas.sp.gov.br",
+            "distrito": "9555838",
+            "data_cadastro": "2026-08-28",
+            "slug": "parque-da-figueira"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023369",
+        "fields": {
+            "nome": "Parque Floresta",
+            "nome_oficial": "Margarida Santos da Silva",
+            "email": "saude.cspqfloresta@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "parque-floresta"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6032419",
+        "fields": {
+            "nome": "Parque Oziel",
+            "nome_oficial": "Antônio Moneta Júnior",
+            "email": "saude.msfoziel@campinas.sp.gov.br",
+            "distrito": "9555838",
+            "data_cadastro": "2026-08-28",
+            "slug": "parque-oziel"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023377",
+        "fields": {
+            "nome": "Parque Santa Bárbara",
+            "nome_oficial": "",
+            "email": "sms.csstabarbara@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "parque-santa-bárbara"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2040670",
+        "fields": {
+            "nome": "Parque São Quirino",
+            "nome_oficial": "Enfermeiro Luis Carlos Marcelino",
+            "email": "saude.cssaoquirino@campinas.sp.gov.br",
+            "distrito": "7774672",
+            "data_cadastro": "2026-08-28",
+            "slug": "parque-são-quirino"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023598",
+        "fields": {
+            "nome": "Parque Valença",
+            "nome_oficial": "Dr. Francisco José Monteiro Salles",
+            "email": "sms.cspqvalenca@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "parque-valença"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "4478576",
+        "fields": {
+            "nome": "Residencial Sirius / Cosmos",
+            "nome_oficial": "Irmã Dilce Martins",
+            "email": "sms.siriuscosmos@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "residencial-sirius-cosmos"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6032427",
+        "fields": {
+            "nome": "Rosália",
+            "nome_oficial": "",
+            "email": "saude.psfrosalia@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "rosália"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023067",
+        "fields": {
+            "nome": "Rossin",
+            "nome_oficial": "",
+            "email": "saude.csrossin@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "rossin"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "7520433",
+        "fields": {
+            "nome": "San Martin",
+            "nome_oficial": "José Alfio Piason",
+            "email": "sms.cssanmartin@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "san-martin"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6865321",
+        "fields": {
+            "nome": "Santa Rosa",
+            "nome_oficial": "Maria da Penha Silva Manoel",
+            "email": "sms.cssantarosa@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "santa-rosa"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "3956296",
+        "fields": {
+            "nome": "Santo Antônio",
+            "nome_oficial": "Dr. Moisés Liberman",
+            "email": "saude.cssantoantonio@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "santo-antônio"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022656",
+        "fields": {
+            "nome": "São Bernardo",
+            "nome_oficial": "Zizi Cintra Junqueira",
+            "email": "saude.csfarialima@campinas.sp.gov.br",
+            "distrito": "4252241",
+            "data_cadastro": "2026-08-28",
+            "slug": "são-bernardo"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023458",
+        "fields": {
+            "nome": "São Domingos",
+            "nome_oficial": "Maria Aparecida Jacintho",
+            "email": "saude.cssaodomingos@campinas.sp.gov.br",
+            "distrito": "9555838",
+            "data_cadastro": "2026-08-28",
+            "slug": "são-domingos"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023628",
+        "fields": {
+            "nome": "São José",
+            "nome_oficial": "Acylino de Souza Santos",
+            "email": "saude.cssaojose@campinas.sp.gov.br",
+            "distrito": "9555838",
+            "data_cadastro": "2026-08-28",
+            "slug": "são-josé"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022702",
+        "fields": {
+            "nome": "Sousas",
+            "nome_oficial": "Dr. Pedro Antônio Pierro",
+            "email": "saude.cssousas@campinas.sp.gov.br",
+            "distrito": "4252241",
+            "data_cadastro": "2026-08-28",
+            "slug": "sousas"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022699",
+        "fields": {
+            "nome": "Taquaral",
+            "nome_oficial": "Cônego Milton Santana",
+            "email": "saude.cstaquaral@campinas.sp.gov.br",
+            "distrito": "7774672",
+            "data_cadastro": "2026-08-28",
+            "slug": "taquaral"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2040719",
+        "fields": {
+            "nome": "União dos Bairros",
+            "nome_oficial": "",
+            "email": "saude.csuniaobairros@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "união-dos-bairros"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "9725407",
+        "fields": {
+            "nome": "Satélite Iris II",
+            "nome_oficial": "Vicente Pisani Neto",
+            "email": "saude.csvicentepisani@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "satélite-iris-ii"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022907",
+        "fields": {
+            "nome": "Vila 31 de Março",
+            "nome_oficial": "Igor Carlos Del Guercio",
+            "email": "saude.cs31marco@campinas.sp.gov.br",
+            "distrito": "7774672",
+            "data_cadastro": "2026-08-28",
+            "slug": "vila-31-de-março"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022826",
+        "fields": {
+            "nome": "Vila Boa Vista",
+            "nome_oficial": "Dr. Osvaldo Serra Von Zuben",
+            "email": "saude.csvilaboavista@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "vila-boa-vista"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023199",
+        "fields": {
+            "nome": "Vila Costa e Silva",
+            "nome_oficial": "Dr. Luiz de Tella",
+            "email": "saude.csvilacostaesilva@campinas.sp.gov.br",
+            "distrito": "7774672",
+            "data_cadastro": "2026-08-28",
+            "slug": "vila-costa-e-silva"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023202",
+        "fields": {
+            "nome": "Vila Ipê",
+            "nome_oficial": "Maria Haydée de Jesus Lima",
+            "email": "saude.csvilaipe@campinas.sp.gov.br",
+            "distrito": "4252241",
+            "data_cadastro": "2026-08-28",
+            "slug": "vila-ipê"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023180",
+        "fields": {
+            "nome": "Vila Orozimbo Maia",
+            "nome_oficial": "Ernesto Sierra Hunovitch",
+            "email": "saude.csvilaorozimbomaia@campinas.sp.gov.br",
+            "distrito": "4252241",
+            "data_cadastro": "2026-08-28",
+            "slug": "vila-orozimbo-maia"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2023091",
+        "fields": {
+            "nome": "Vila Padre Anchieta",
+            "nome_oficial": "José Carlos Bonfá",
+            "email": "saude.cspadreanchieta@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "vila-padre-anchieta"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022788",
+        "fields": {
+            "nome": "Vila Perseu Leite de Barros",
+            "nome_oficial": "Laura Simões Carvalheira Amicucci",
+            "email": "saude.csperseulbarros@campinas.sp.gov.br",
+            "distrito": "2023059",
+            "data_cadastro": "2026-08-28",
+            "slug": "vila-perseu-leite-de-barros"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "2022834",
+        "fields": {
+            "nome": "Vila Rica",
+            "nome_oficial": "Claudia Odete Maria Marsal Cintra",
+            "email": "saude.csvilarica@campinas.sp.gov.br",
+            "distrito": "9555838",
+            "data_cadastro": "2026-08-28",
+            "slug": "vila-rica"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "3385116",
+        "fields": {
+            "nome": "Vila União",
+            "nome_oficial": "Dr. José Roberto Miccoli",
+            "email": "saude.csvilauniao@campinas.sp.gov.br",
+            "distrito": "2023040",
+            "data_cadastro": "2026-08-28",
+            "slug": "vila-união"
+        }
+    },
+    {
+        "model": "assistencial.ubs",
+        "pk": "6032443",
+        "fields": {
+            "nome": "Village",
+            "nome_oficial": "",
+            "email": "saude.psfvillage@campinas.sp.gov.br",
+            "distrito": "2023466",
+            "data_cadastro": "2026-08-28",
+            "slug": "village"
+        }
+    }
+]

@@ -37,42 +37,29 @@
   <!--Navbar-->
   <nav class="vt-navbar" role="navigation" aria-label="Navegação principal">
     {% block navbar %}
-      {% include 'core/includes/navbar.html' %}
+      {% include 'core/includes/_navbar.html' %}
     {% endblock navbar %}
     <!--Módulos a esquerda-->
    
 
     <!--Modulos direita (actions e icone perfil)-->
     {%block navbar_action %}
-      {% include 'core/includes/navbar_actions.html' %}
+      {% include 'core/includes/_navbar_actions.html' %}
     {% endblock navbar_action %} 
   </nav>
 
   <!--Mensagem Django-->
   {% if messages %}
     {% block messages %}
-      {% include 'core/include/messages.html' with messages=messages %}
+      {% include 'core/include/_messages.html' with messages=messages %}
     {% endblock messages %}
   {% endif %}
 
 
   <div class="vt-layout">
 
-    <!--Barra lateral -->
-    <aside class="vt-sidebar" id="vt-sidebar"
-           role="complementary" aria-label="Informações da página">
-
-      <!--Card Flutuante da barra lateral-->
-      <div class="vt-sidebar__card" id="vt-sidebar-card">
-
-        {% block sidebar %}
-        {% endblock sidebar %}
-
-        <span class="vt-sidebar__spacer"></span>
-
-      </div>
-
-    </aside>
+    {% block sidebar %}
+    {% endblock sidebar %}
 
     <!--Conteúdo Principal-->
     <main class="vt-main" id="vt-main" role="main">
@@ -95,7 +82,7 @@
 
 <!--Rodapé-->
 {% block footer %} 
-  {% include 'core/includes/rodape.html' %}
+  {% include 'core/includes/_rodape.html' %}
 {% endblock footer %}
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,46 @@
+{% block sidebar %}
+<!--Barra lateral -->
+<aside class="vt-sidebar" id="vt-sidebar" role="complementary" aria-label="Informações da página">
+
+    <!--Card Flutuante da barra lateral-->
+    <div class="vt-sidebar__card" id="vt-sidebar-card">
+        
+        <div class="vt-unidade-header">
+            <!-- Badge topo à esquerda -->
+            <span class="vt-badge vt-badge--primary vt-unidade-badge">Distrito</span>
+            
+            <!-- Avatar e Títulos -->
+            <div class="vt-unidade-avatar">
+                <i class="bi bi-pin-map-fill"></i>
+            </div>
+            
+            <h5 class="vt-unidade-title">{{ distrito.nome }}</h5>
+            
+            <!-- CNES imediatamente abaixo do título, sem ícone -->
+            <div class="vt-unidade-cnes">{{ distrito.cnes|default:"Não informado" }}</div>
+        </div>
+        
+        <!-- E-mail apenas com ícone menor e wrap -->
+        <div class="vt-unidade-email-box">
+            <div class="vt-unidade-email-icon">
+                <i class="bi bi-envelope-at"></i>
+            </div>
+            <div class="vt-unidade-email-text">{{ distrito.email|default:"Não informado" }}</div>
+        </div>
+
+        <ul class="vt-sidebar__nav mt-2">
+            <a href="{% url 'regional:distritos' %}" class="vt-sidebar__nav-link text-decoration-none">
+                <i class="bi bi-arrow-left-circle vt-icon"></i>
+                Voltar aos Distritos
+            </a>
+        </ul>
+        
+        <span class="vt-sidebar__spacer"></span>
+
+        <div class="vt-sidebar__card-footer">
+            GESTÃO REGIONAL
+        </div>
+    </div>
+
+</aside>
+{% endblock sidebar %}

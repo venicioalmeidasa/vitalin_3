@@ -4,5 +4,6 @@ from . import views
 app_name = 'regional'
 
 urlpatterns = [
-    path('distritos/', views.DistritoView.as_view(), name='distritos')
+    path('distritos/', views.DistritoList.as_view(), name='distritos'),
+    path('distrito/<slug:slug>/', views.DistritoDetail.as_view(), name='distrito')
 ]
