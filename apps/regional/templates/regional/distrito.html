@@ -1,9 +1,21 @@
 {% extends 'core/base.html' %}
 
+{% block page_title %}
+<span class="vt-page-header__icon-circle"><i class="bi bi-pin-map-fill"></i></span>{{ distrito.nome }}<span class="vt-page-header__cnes">{{ distrito.cnes }}</span>
+{% endblock page_title %}
+
+{% block page_subtitle %}
+<span class="d-flex align-items-center gap-1 text-muted vt-page-header__meta-item">
+    <i class="bi bi-envelope-at"></i> {{ distrito.email }}
+</span>
+{% endblock page_subtitle %}
+
 {% block sidebar %}
-    {% include 'regional/includes/_sidebar.html' with distrito=distrito only %}
+    {% include 'regional/includes/_sidebar.html' with distrito=distrito num_ubss=num_ubss only %}
 {% endblock sidebar %}
 
 {% block content %}
-<h1>Página Distrito</h1>
+<div class="vt-tabs-container">
+    {% include 'regional/includes/_aba_conteudo.html' with distrito=distrito num_ubss=num_ubss ubss=ubss only %}
+</div>
 {% endblock content %}

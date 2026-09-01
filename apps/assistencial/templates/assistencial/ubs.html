@@ -1,0 +1,256 @@
+{% extends 'core/base.html' %}
+
+{% block page_title %}
+<span class="vt-page-header__icon-circle"><i class="bi bi-house"></i></span>{{ ubs.nome }}<span class="vt-page-header__cnes">{{ ubs.cnes|default:"Não informado" }}</span>
+{% endblock page_title %}
+
+{% block page_subtitle %}
+<span class="d-flex align-items-center flex-wrap gap-2">
+    <span>{{ ubs.nome_oficial|default:ubs.nome }}</span>
+    {% if ubs.distrito %}
+    <span class="text-muted">•</span>
+    <a href="{% url 'regional:distrito' ubs.distrito.slug %}" title="Ver {{ ubs.distrito.nome }}">
+        <span class="badge bg-primary-subtle text-primary border border-primary-subtle d-inline-flex align-items-center gap-1 vt-page-header__badge-distrito">
+            <i class="bi bi-pin-map-fill"></i> {{ ubs.distrito.nome }}
+        </span>
+    </a>
+    {% endif %}
+</span>
+<span class="d-flex align-items-center gap-1 mt-1 text-muted vt-page-header__meta-item">
+    <i class="bi bi-envelope-at"></i> {{ ubs.email|default:"Não informado" }}
+</span>
+{% endblock page_subtitle %}
+
+{% block sidebar %}
+    {% include 'assistencial/includes/_sidebar.html' with ubs=ubs only %}
+{% endblock sidebar %}
+
+{% block content %}
+<div class="vt-tabs-container">
+
+    <!-- 1. ABA: VISÃO GERAL (Padrão) -->
+    <section id="visao-geral" class="vt-tab-panel vt-tab-panel--default">
+        <div class="vt-tab-content-card">
+            <div class="vt-tab-header-box">
+                <h3 class="vt-tab-header-title">
+                    <span class="vt-tab-header-icon"><i class="bi bi-grid-1x2"></i></span>
+                    Visão Geral da Unidade
+                </h3>
+                <a href="{% url 'regional:distrito' ubs.distrito.slug %}" title="Ver {{ ubs.distrito.nome }}">
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2">
+                        <i class="bi bi-pin-map-fill"></i>{{ ubs.distrito.nome }}
+                    </span>
+                </a>
+            </div>
+
+            <div class="vt-notice-box">
+                <div class="vt-notice-icon">
+                    <i class="bi bi-info-lg"></i>
+                </div>
+                <div>
+                    <h6 class="vt-notice-title">Acesso Rápido às Informações</h6>
+                    <p class="vt-notice-text">
+                        Utilize o menu lateral para consultar os <strong>Serviços Prestados</strong>, <strong>Horários de Funcionamento</strong> e <strong>Dados Institucionais</strong> completos desta UBS.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABA: SERVIÇOS PRESTADOS -->
+    <section id="servicos" class="vt-tab-panel">
+        <div class="vt-tab-content-card">
+            <div class="vt-tab-header-box">
+                <h3 class="vt-tab-header-title">
+                    <span class="vt-tab-header-icon"><i class="bi bi-heart-pulse"></i></span>
+                    Serviços e Procedimentos Disponíveis
+                </h3>
+                <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle px-3 py-2">
+                    Atenção Primária à Saúde
+                </span>
+            </div>
+
+            <div class="vt-info-grid-2">
+                <div class="vt-service-card">
+                    <div class="vt-service-icon">
+                        <i class="bi bi-person-lines-fill"></i>
+                    </div>
+                    <div>
+                        <h5 class="vt-service-title">Consultas Médicas & Clínicas</h5>
+                        <p class="vt-service-desc">Atendimento médico geral para diagnóstico, acompanhamento clínico de doenças crônicas (Hipertensão, Diabetes) e encaminhamentos.</p>
+                    </div>
+                </div>
+
+                <div class="vt-service-card">
+                    <div class="vt-service-icon">
+                        <i class="bi bi-bandaid"></i>
+                    </div>
+                    <div>
+                        <h5 class="vt-service-title">Enfermagem & Procedimentos</h5>
+                        <p class="vt-service-desc">Consultas de enfermagem, realização de curativos, retirada de pontos, administração de medicações e aferição de sinais vitais.</p>
+                    </div>
+                </div>
+
+                <div class="vt-service-card">
+                    <div class="vt-service-icon">
+                        <i class="bi bi-capsule"></i>
+                    </div>
+                    <div>
+                        <h5 class="vt-service-title">Sala de Vacinas & Imunização</h5>
+                        <p class="vt-service-desc">Aplicação de todas as vacinas previstas no Calendário Nacional de Imunização para crianças, adolescentes, adultos e idosos.</p>
+                    </div>
+                </div>
+
+                <div class="vt-service-card">
+                    <div class="vt-service-icon">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                    <div>
+                        <h5 class="vt-service-title">Pré-Natal & Saúde da Mulher</h5>
+                        <p class="vt-service-desc">Acompanhamento pré-natal integral, coleta de preventivo (Papanicolau), planejamento reprodutivo e puericultura infantil.</p>
+                    </div>
+                </div>
+
+                <div class="vt-service-card">
+                    <div class="vt-service-icon">
+                        <i class="bi bi-box2-heart"></i>
+                    </div>
+                    <div>
+                        <h5 class="vt-service-title">Farmácia Básica & Dispensação</h5>
+                        <p class="vt-service-desc">Disponibilização e entrega de medicamentos essenciais da Relação Municipal de Medicamentos (REMUME) com receita válida.</p>
+                    </div>
+                </div>
+
+                <div class="vt-service-card">
+                    <div class="vt-service-icon">
+                        <i class="bi bi-chat-heart"></i>
+                    </div>
+                    <div>
+                        <h5 class="vt-service-title">Acolhimento & Triagem</h5>
+                        <p class="vt-service-desc">Escuta qualificada das necessidades do usuário com classificação de risco para atendimento ágil às demandas espontâneas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABA: HORÁRIOS DE ATENDIMENTO -->
+    <section id="horarios" class="vt-tab-panel">
+        <div class="vt-tab-content-card">
+            <div class="vt-tab-header-box">
+                <h3 class="vt-tab-header-title">
+                    <span class="vt-tab-header-icon"><i class="bi bi-clock-history"></i></span>
+                    Grade de Horários e Atendimento
+                </h3>
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2">
+                    <i class="bi bi-clock me-1"></i>Em Funcionamento
+                </span>
+            </div>
+
+            <div class="vt-info-grid-3 mb-4">
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-calendar-week"></i> Dias de Funcionamento</span>
+                    <p class="vt-detail-val">Segunda a Sexta-feira</p>
+                </div>
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-door-open"></i> Horário Contínuo</span>
+                    <p class="vt-detail-val">07:00 às 17:00</p>
+                </div>
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-hospital"></i> Tipo de Unidade</span>
+                    <p class="vt-detail-val">Atenção Primária (Porte II)</p>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle border rounded-3 overflow-hidden vt-table-schedule">
+                    <thead>
+                        <tr>
+                            <th class="py-3 px-3">Serviço / Setor</th>
+                            <th class="py-3 px-3">Dias</th>
+                            <th class="py-3 px-3">Horário</th>
+                            <th class="py-3 px-3">Modalidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-3 fw-semibold"><i class="bi bi-door-open me-2 text-primary"></i>Recepção & Acolhimento</td>
+                            <td class="px-3">Seg a Sex</td>
+                            <td class="px-3 fw-bold text-primary">07:00 - 17:00</td>
+                            <td class="px-3"><span class="badge bg-light text-dark border">Demanda Espontânea</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 fw-semibold"><i class="bi bi-capsule me-2 text-primary"></i>Sala de Vacinação</td>
+                            <td class="px-3">Seg a Sex</td>
+                            <td class="px-3 fw-bold text-primary">07:30 - 16:30</td>
+                            <td class="px-3"><span class="badge bg-light text-dark border">Ordem de Chegada</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 fw-semibold"><i class="bi bi-box2-heart me-2 text-primary"></i>Farmácia Básica</td>
+                            <td class="px-3">Seg a Sex</td>
+                            <td class="px-3 fw-bold text-primary">08:00 - 16:00</td>
+                            <td class="px-3"><span class="badge bg-light text-dark border">Receituário SUS</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 fw-semibold"><i class="bi bi-person-lines-fill me-2 text-primary"></i>Consultas Agendadas</td>
+                            <td class="px-3">Seg a Sex</td>
+                            <td class="px-3 fw-bold text-primary">08:00 - 17:00</td>
+                            <td class="px-3"><span class="badge bg-light text-dark border">Agendamento Prévio</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ABA: DADOS INSTITUCIONAIS -->
+    <section id="institucional" class="vt-tab-panel">
+        <div class="vt-tab-content-card">
+            <div class="vt-tab-header-box">
+                <h3 class="vt-tab-header-title">
+                    <span class="vt-tab-header-icon"><i class="bi bi-info-circle"></i></span>
+                    Ficha Cadastral e Institucional
+                </h3>
+                <span class="badge bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle px-3 py-2">
+                    Registro Oficial
+                </span>
+            </div>
+
+            <div class="vt-info-grid-2 mb-3">
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-building"></i> Nome Oficial / Razão Social</span>
+                    <p class="vt-detail-val">{{ ubs.nome_oficial|default:ubs.nome }}</p>
+                </div>
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-tag"></i> Nome Fantasia / Popular</span>
+                    <p class="vt-detail-val">{{ ubs.nome }}</p>
+                </div>
+            </div>
+
+            <div class="vt-info-grid-3">
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-pin-map-fill"></i> Distrito Regional</span>
+                    <p class="vt-detail-val">
+                        {% if ubs.distrito %}
+                        <a href="{% url 'regional:distrito' ubs.distrito.slug %}" class="text-decoration-none text-primary fw-bold">
+                            <i class="bi bi-link-45deg me-1"></i>{{ ubs.distrito.nome }}
+                        </a>
+                        {% else %}
+                        <span class="text-muted">Não vinculado</span>
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-envelope-at"></i> E-mail Institucional</span>
+                    <p class="vt-detail-val text-truncate">{{ ubs.email|default:"Não informado" }}</p>
+                </div>
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-calendar-check"></i> Data de Cadastro</span>
+                    <p class="vt-detail-val">{{ ubs.data_cadastro|date:"d/m/Y"|default:"-" }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock content %}

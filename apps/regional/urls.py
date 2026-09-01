@@ -5,5 +5,5 @@ app_name = 'regional'
 
 urlpatterns = [
     path('distritos/', views.DistritoList.as_view(), name='distritos'),
-    path('distrito/<slug:slug>/', views.DistritoDetail.as_view(), name='distrito')
+    path('distrito/<str:slug>/', views.DistritoDetail.as_view(), name='distrito')
 ]

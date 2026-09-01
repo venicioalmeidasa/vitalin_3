@@ -6,11 +6,11 @@
     <div class="vt-sidebar__card" id="vt-sidebar-card">
         
         <!-- 1. Badge no topo -->
-        <span class="vt-badge vt-badge--primary vt-unidade-badge">Distrito</span>
+        <span class="vt-badge vt-badge--primary vt-unidade-badge">UBS</span>
 
         <!-- 2. Abas de Navegação no Conteúdo (CSS :target sem JS) -->
         <div class="vt-sidebar-tabs mt-0 pt-0 border-top-0">
-            <a href="#visao-geral" class="vt-sidebar-tab-btn" title="Visão Geral do Distrito">
+            <a href="#visao-geral" class="vt-sidebar-tab-btn" title="Visão Geral da Unidade">
                 <div class="vt-tab-left">
                     <i class="bi bi-grid-1x2 vt-tab-icon"></i>
                     <span>Visão Geral</span>
@@ -18,30 +18,38 @@
                 <i class="bi bi-chevron-right vt-tab-arrow"></i>
             </a>
 
-            <a href="#ubss-vinculadas" class="vt-sidebar-tab-btn" title="Unidades Básicas de Saúde Vinculadas">
+            <a href="#servicos" class="vt-sidebar-tab-btn" title="Serviços Prestados">
                 <div class="vt-tab-left">
-                    <i class="bi bi-houses vt-tab-icon"></i>
-                    <span>UBSs Vinculadas</span>
+                    <i class="bi bi-heart-pulse vt-tab-icon"></i>
+                    <span>Serviços</span>
                 </div>
                 <i class="bi bi-chevron-right vt-tab-arrow"></i>
             </a>
 
-            <a href="#atendimento" class="vt-sidebar-tab-btn" title="Atendimento e Expediente">
+            <a href="#horarios" class="vt-sidebar-tab-btn" title="Horários de Atendimento">
                 <div class="vt-tab-left">
                     <i class="bi bi-clock-history vt-tab-icon"></i>
-                    <span>Expediente</span>
+                    <span>Horários</span>
+                </div>
+                <i class="bi bi-chevron-right vt-tab-arrow"></i>
+            </a>
+
+            <a href="#institucional" class="vt-sidebar-tab-btn" title="Dados Institucionais">
+                <div class="vt-tab-left">
+                    <i class="bi bi-info-circle vt-tab-icon"></i>
+                    <span>Institucional</span>
                 </div>
                 <i class="bi bi-chevron-right vt-tab-arrow"></i>
             </a>
         </div>
-        
+
         <span class="vt-sidebar__spacer"></span>
 
-        <!-- 3. Por último: Ver todos os Distritos -->
+        <!-- 3. Por último: Ver todas as unidades -->
         <ul class="vt-sidebar__nav pt-2 border-top">
-            <a href="{% url 'regional:distritos' %}" class="vt-sidebar__nav-link text-decoration-none">
+            <a href="{% url 'assistencial:ubss' %}" class="vt-sidebar__nav-link text-decoration-none">
                 <i class="bi bi-arrow-left-circle vt-icon"></i>
-                Ver todos os Distritos
+                Ver todas as unidades
             </a>
         </ul>
 

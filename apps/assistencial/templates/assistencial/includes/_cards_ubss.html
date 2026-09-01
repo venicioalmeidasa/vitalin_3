@@ -1,0 +1,39 @@
+<div class="vt-card-grid">
+    {% for ubs in ubss %}
+    <a href="{% url 'assistencial:ubs' ubs.slug %}" class="vt-card-unit" title="Acessar {{ ubs.nome }}">
+        
+        {% if ubs.distrito %}
+        <span class="vt-card-unit__badge" title="Distrito Regional: {{ ubs.distrito.nome }}">
+            <i class="bi bi-pin-map-fill"></i>
+            <span>{{ ubs.distrito.nome }}</span>
+        </span>
+        {% endif %}
+
+        <div class="vt-card-unit__header">
+            <div class="vt-card-unit__icon">
+                <i class="bi bi-house vt-icon"></i>
+            </div>
+            <div class="vt-card-unit__header-text">
+                <h2 class="vt-card-unit__title">{{ ubs.nome }}</h2>
+                {% if ubs.nome != ubs.nome_oficial %}
+                    <p class="vt-card-unit__official-name" title="{{ ubs.nome_oficial }}">{{ ubs.nome_oficial }}</p>
+                {% endif %}
+                <p class="vt-card-unit__subtitle">{{ ubs.cnes|default:"Não informado" }}</p>
+            </div>
+        </div>
+
+        <div class="vt-card-unit__info">
+            <div class="vt-card-unit__info-item">
+                <i class="bi bi-envelope-at vt-card-unit__info-icon"></i>
+                <span class="text-truncate">{{ ubs.email|default:"Não informado" }}</span>
+            </div>
+        </div>
+
+    </a>
+    {% empty %}
+    <div class="col-12 text-center text-muted mt-5 vt-grid-empty">
+        <i class="bi bi-inboxes fs-1 mb-3 d-block"></i>
+        <p>Nenhuma Unidade Básica de Saúde cadastrada</p>
+    </div>
+    {% endfor %}
+</div>

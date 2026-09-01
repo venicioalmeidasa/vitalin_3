@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+{% block page_title %}
+<i class="bi bi-houses"></i>
+Unidades Básicas de Saúde
+{% endblock page_title %}
+{% block page_subtitle %}
+Listagem das Unidades Básicas de Saúde - {{ num_ubss }} unidades
+{% endblock page_subtitle %}
+
+{% block content %}
+    {% include 'assistencial/includes/_cards_ubss.html' with ubss=ubss only %}
+{% endblock content %}

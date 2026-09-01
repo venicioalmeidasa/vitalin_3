@@ -2,13 +2,43 @@
 {% block sidebar %}
 {% endblock sidebar %}
 
-{% block page_title %}Distritos{% endblock page_title %}
+{% block page_title %}
+    <i class="bi bi-pin-map-fill"></i>
+    Distritos
+{% endblock page_title %}
 
 {% block page_subtitle %}
-Listagem dos Distritos Regionais - {{ num_distritos }} unidades
+    Listagem dos Distritos Regionais - {{ num_distritos }} unidades
 {% endblock page_subtitle %}
 
 {% block content %}
-{% include 'includes/_cards_estabelecimento.html' with unidades=distritos url_unidade='regional:distrito' icone='bi bi-pin-map-fill' msg_vazio='Nenhum distrito sanitário cadastrado.' only%}
+    <div class="vt-card-grid">
+        {% for distrito in distritos %}
+        <a href="{% url 'regional:distrito' distrito.slug %}" class="vt-card-unit" title="Acessar {{ distrito.nome }}">
+            
+            <div class="vt-card-unit__header">
+                <div class="vt-card-unit__icon">
+                    <i class="bi bi-pin-map-fill"></i>
+                </div>
+                <div>
+                    <h2 class="vt-card-unit__title">{{ distrito.nome }}</h2>
+                    <p class="vt-card-unit__subtitle">{{ distrito.cnes|default:"Não informado" }}</p>
+                </div>
+            </div>
 
+            <div class="vt-card-unit__info">
+                <div class="vt-card-unit__info-item">
+                    <i class="bi bi-envelope-at vt-card-unit__info-icon"></i>
+                    <span class="text-truncate">{{ distrito.email|default:"Não informado" }}</span>
+                </div>
+            </div>
+
+        </a>
+        {% empty %}
+        <div class="col-12 text-center text-muted mt-5 vt-grid-empty">
+            <i class="bi bi-inboxes fs-1 mb-3 d-block"></i>
+            <p>Nenhum Distrito de saúde cadastrado</p>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock content %}

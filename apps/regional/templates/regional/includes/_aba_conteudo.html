@@ -1,0 +1,90 @@
+ <!-- 1. ABA: VISÃO GERAL (Padrão) -->
+    <section id="visao-geral" class="vt-tab-panel vt-tab-panel--default">
+        <div class="vt-tab-content-card">
+            <div class="vt-tab-header-box">
+                <h3 class="vt-tab-header-title">
+                    <span class="vt-tab-header-icon"><i class="bi bi-grid-1x2"></i></span>
+                    Visão Geral do Distrito de Saúde
+                </h3>
+            </div>
+
+            <div class="vt-info-grid-3 mb-4">
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-pin-map"></i> Nome do Distrito</span>
+                    <p class="vt-detail-val">{{ distrito.nome }}</p>
+                </div>
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-card-checklist"></i> CNES</span>
+                    <p class="vt-detail-val">{{ distrito.cnes }}</p>
+                </div>
+                {% if num_ubss %}
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-diagram-3"></i>Unidades Vinculadas</span>
+                    <p class="vt-detail-val">{{ num_ubss}} UBS{{ num_ubss|pluralize:'s' }} Vinculada{{ num_ubss|pluralize:'s' }}</p>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="vt-notice-box">
+                <div class="vt-notice-icon">
+                    <i class="bi bi-info-circle"></i>
+                </div>
+                <div>
+                    <h6 class="vt-notice-title">Painel do Território Regional</h6>
+                    <p class="vt-notice-text">
+                        Coordenação territorial da Atenção Primária. Navegue pelas abas ao lado para consultar as <strong>UBSs Vinculadas</strong> e os canais de <strong>Expediente & Atendimento</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABA: UBSS VINCULADAS -->
+    <section id="ubss-vinculadas" class="vt-tab-panel">
+        <div class="vt-tab-content-card">
+            <div class="vt-tab-header-box">
+                <h3 class="vt-tab-header-title">
+                    <span class="vt-tab-header-icon"><i class="bi bi-houses"></i></span>
+                    Unidades Básicas de Saúde Vinculadas
+                </h3>
+                <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle px-3 py-2">
+                    {{ num_ubss|default:"0" }} Unidade{{ num_ubss|pluralize:"s" }}
+                </span>
+            </div>
+            {% if ubss %}
+                 {% include 'assistencial/includes/_cards_ubss.html' with ubss=ubss only %}
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- 3. ABA: ATENDIMENTO & EXPEDIENTE -->
+    <section id="atendimento" class="vt-tab-panel">
+        <div class="vt-tab-content-card">
+            <div class="vt-tab-header-box">
+                <h3 class="vt-tab-header-title">
+                    <span class="vt-tab-header-icon"><i class="bi bi-clock-history"></i></span>
+                    Expediente Administrativo & Contato
+                </h3>
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2">
+                    <i class="bi bi-building me-1"></i>Sede Regional
+                </span>
+            </div>
+
+            <div class="vt-info-grid-3">
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-clock"></i> Horário de Atendimento</span>
+                    <p class="vt-detail-val">08:00 às 18:00 (Seg a Sex)</p>
+                </div>
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-envelope-at"></i> E-mail Institucional</span>
+                    <p class="vt-detail-val text-truncate">{{ distrito.email|default:"Não informado" }}</p>
+                </div>
+                <div class="vt-detail-box">
+                    <span class="vt-detail-label"><i class="bi bi-shield-check"></i> Gestão do SUS</span>
+                    <p class="vt-detail-val">Supervisão Territorial Ativa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
