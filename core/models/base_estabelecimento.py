@@ -1,28 +1,16 @@
 from django.utils.text import slugify
 from django.db import models
 
-# Create your models here.
-class Ubs(models.Model):
-    #Unidades Básicas de Saúde - atenção primaria
+class UnidadeBase(models.Model):
+    #Unidade base para unidades que prestam atenção direta ao usuário
     cnes = models.CharField(
         max_length=12,
         verbose_name='CNES',
         primary_key=True
     )
-    distrito = models.ForeignKey(
-        'regional.Distrito',
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name='ubss'
-    )
     nome = models.CharField(
-        max_length=75,
+        max_length=120,
         verbose_name='Nome'
-    )
-    nome_oficial = models.CharField(
-        max_length=75,
-        verbose_name='Nome Oficial',
     )
     data_cadastro = models.DateField(
         verbose_name='Data do Cadastro',
@@ -33,14 +21,18 @@ class Ubs(models.Model):
         verbose_name='Ativo'
     )
     email = models.EmailField(
-        verbose_name='email'
+        verbose_name='email',
+        null=True,
+        blank=True
     )
     slug = models.SlugField(
         unique=True,
+        max_length=120,
         allow_unicode=True,
         help_text='Nome amigável para url'
     )
     class Meta:
+        abstract = True
         ordering = ['nome']
 
     def __str__(self):

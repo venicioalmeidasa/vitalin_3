@@ -1,0 +1,132 @@
+[
+    {
+        "model": "assistencial.especialidade",
+        "pk": "2023342",
+        "fields": {
+            "nome": "Centro de Referência Especializado em Reabilitação",
+            "sigla": "CER",
+            "vinculo": "Departamento de Saúde",
+            "email": "saude.reabfisica@campinas.sp.gov.br",
+            "ativo": true,
+            "data_cadastro": "2026-02-09",
+            "slug": "centro-de-referência-especializado-em-reabilitação"
+        }
+    },
+    {
+        "model": "assistencial.especialidade",
+        "pk": "2022710",
+        "fields": {
+            "nome": "Centro de Exames e Especialidades Médicas",
+            "sigla": "CEEM",
+            "vinculo": "Departamento de Saúde",
+            "email": "sms.ceem@campinas.sp.gov.br",
+            "ativo": true,
+            "data_cadastro": "2026-02-09",
+            "slug": "centro-de-exames-e-especialidades-médicas"
+        }
+    },
+    {
+        "model": "assistencial.especialidade",
+        "pk": "5652545",
+        "fields": {
+            "nome": "Centro de Referência de Assistência Integral à Mulher",
+            "sigla": "CRAIM",
+            "vinculo": "Departamento de Saúde",
+            "email": "sms.craim@campinas.sp.gov.br",
+            "ativo": true,
+            "data_cadastro": "2026-02-09",
+            "slug": "centro-de-referência-de-assistência-integral-à-mulher"
+        }
+    },
+    {
+        "model": "assistencial.especialidade",
+        "pk": "5999812",
+        "fields": {
+            "nome": "Centro de Referência e Diagnóstico em Oncologia",
+            "sigla": "CDO",
+            "vinculo": "Departamento de Saúde",
+            "email": null,
+            "ativo": true,
+            "data_cadastro": "2026-02-09",
+            "slug": "centro-de-referência-e-diagnóstico-em-oncologia"
+        }
+    },
+    {
+        "model": "assistencial.especialidade",
+        "pk": "2023334",
+        "fields": {
+            "nome": "Centro de Referência em Saúde do Trabalhador",
+            "sigla": "CEREST",
+            "vinculo": "Coordenadoria Departamental de Saúde do Trabalhador e Determinantes Ambientais da Saúde, do Departamento de Vigilância em Saúde",
+            "email": "saude.cerest@campinas.sp.gov.br",
+            "ativo": true,
+            "data_cadastro": "2026-02-09",
+            "slug": "centro-de-referência-em-saúde-do-trabalhador"
+        }
+    },
+    {
+        "model": "assistencial.especialidade",
+        "pk": "2022710",
+        "fields": {
+            "nome": "Ambulatório de Especialidades",
+            "sigla": "Policlinica",
+            "vinculo":"Departamento de Saúde",
+            "email": "saude.policlinica2@campinas.sp.gov.br",
+            "ativo": true,
+            "data_cadastro": "2026-02-09",
+            "slug":"ambulatorio-de-especialidades"
+        }
+    },
+    {
+        "model":"assistencial.especialidade",
+        "pk": "2023350",
+        "fields": {
+            "nome": "Centro de Referência em IST, HIV/Aids e Hepatites Virais - Dra. Silvia Brandão Bertazolli Bellucci",
+            "sigla": "DST/AIDS",
+            "vinculo": "Departamento de Saúde",
+            "email": "dst.aids@campinas.sp.gov.br",
+            "ativo": true,
+            "data_cadastro": "2026-02-09",
+            "slug":"centro-de-referência-em-ist-hivaids-e-hepatites-virais-dra-silvia-brandão-bertazolli-bellucci"
+        }
+    },
+    {
+        "model":"assistencial.especialidade",
+        "pk":"2707462",
+        "fields": {
+            "nome": "Centro de Especialidades Odontológicas Dr. Jorge F. Baracat",
+            "sigla":"CEO Sudoeste",
+            "vinculo":"Departamento de Saúde",
+            "email": "ceo.sudoeste@campinas.sp.gov.br",
+            "ativo": true,
+            "data_cadastro": "2026-02-09",
+            "slug": "centro-de-especialidades-odontológicas-dr-jorge-f-baracat"
+        }
+    },
+    {
+        "model":"assistencial.especialidade",
+        "pk":"5994977",
+        "fields": {
+            "nome": "Centro de Especialidades Odontológicas Noroeste",
+            "sigla":"CEO Noroeste",
+            "vinculo":"Departamento de Saúde",
+            "email":"ceo.noroeste@campinas.sp.gov.br",
+            "ativo":true,
+            "data_cadastro":"2026-02-09",
+            "slug": "centro-de-especialidades-odontológicas-noroeste"
+        }
+    },
+    {
+        "model":"assistencial.especialidade",
+        "pk": "4080599",
+        "fields": {
+            "nome": "Centro de Especialidades Odontológicas Sul",
+            "sigla":"CEO Sul",
+            "vinculo": "Departamento de Saúde",
+            "email": "ceo.sul@campinas.sp.gov.br",
+            "ativo":true,
+            "data_cadastro":"2026-02-09",
+            "slug": "centro-de-especialidades-odontológicas-sul"
+        }
+    }
+]
