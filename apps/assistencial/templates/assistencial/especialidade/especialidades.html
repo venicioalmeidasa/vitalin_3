@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+{% block page_title %}
+<i class="bi bi-buildings vt-icon"></i>
+Especialidades
+{% endblock page_title %}
+{% block page_subtitle %}
+Listagem das Especialidades - {{ num_especialidades }} unidades
+{% endblock page_subtitle %}
+
+{% block content %}
+    {% include 'assistencial/includes/especialidade/_cards.html' with especialidades=especialidades only %}
+{% endblock content %}

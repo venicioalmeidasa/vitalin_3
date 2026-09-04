@@ -6,9 +6,11 @@
 
 {% block page_subtitle %}
 <span class="d-flex align-items-center flex-wrap gap-2">
-    <span>{{ ubs.nome_oficial|default:ubs.nome }}</span>
+    {% if ubs_nome != ubs.nome_oficial %}
+        <span>{{ ubs.nome_oficial }}</span>
+        <span class="text-muted">•</span>
+    {% endif %}
     {% if ubs.distrito %}
-    <span class="text-muted">•</span>
     <a href="{% url 'regional:distrito' ubs.distrito.slug %}" title="Ver {{ ubs.distrito.nome }}">
         <span class="badge bg-primary-subtle text-primary border border-primary-subtle d-inline-flex align-items-center gap-1 vt-page-header__badge-distrito">
             <i class="bi bi-pin-map-fill"></i> {{ ubs.distrito.nome }}
@@ -22,7 +24,7 @@
 {% endblock page_subtitle %}
 
 {% block sidebar %}
-    {% include 'assistencial/includes/_sidebar.html' with ubs=ubs only %}
+    {% include 'assistencial/includes/ubs/_sidebar.html' with ubs=ubs only %}
 {% endblock sidebar %}
 
 {% block content %}

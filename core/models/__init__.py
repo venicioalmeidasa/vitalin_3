@@ -1,3 +1,3 @@
 from .base_estabelecimento import UnidadeBase
-
-__all__ = ['UnidadeBase']
+from .pessoa import Pessoa
+__all__ = ['UnidadeBase', 'Pessoa']

@@ -6,7 +6,7 @@ Sistema de gestão em saúde pública desenvolvido em Python e Django, voltado �
 
 - **Linguagem & Framework**: Python 3.12+ / Django 5.x
 - **Arquitetura**: Orientada a Domínio (DDD) dividida em Bounded Contexts (Apps Django: `core`, `regional`, `assistencial`)
-- **Frontend**: Django Templates com Bootstrap moderno e arquivos estáticos centralizados em `static/`
+- **Frontend**: Django Templates com Bootstrap moderno e arquivos estáticos centralizados em `static/styles/base.css` (sistema de classes BEM, microinterações, tokens de cor azul confiável e cards padronizados para UBS e Especialidades).
 - **Segurança**: Conformidade com OWASP Top 10, proteção contra CSRF, XSS, Clickjacking e proteção a dados sensíveis (LGPD).
 
 ## Estrutura de Bounded Contexts

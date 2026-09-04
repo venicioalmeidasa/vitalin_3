@@ -1,0 +1,32 @@
+<div class="vt-card-grid">
+    {% for especialidade in especialidades %}
+    <a href="{% url 'assistencial:especialidade' especialidade.slug %}" class="vt-card-unit" title="Acessar {{ especialidade.nome }}">
+
+        <div class="vt-card-unit__header">
+            <div class="vt-card-unit__icon">
+                <i class="bi bi-buildings vt-icon"></i>
+            </div>
+            <div class="vt-card-unit__header-text">
+                <h2 class="vt-card-unit__title">{{ especialidade.nome }}</h2>
+                {% if especialidade.sigla %}
+                <span class="vt-card-unit__sigla" title="Sigla: {{ especialidade.sigla }}">{{ especialidade.sigla }}</span>
+                {% endif %}
+                <p class="vt-card-unit__subtitle">{{ especialidade.cnes|default:"Não informado" }}</p>
+            </div>
+        </div>
+
+        <div class="vt-card-unit__info">
+            <div class="vt-card-unit__info-item">
+                <i class="bi bi-envelope-at vt-card-unit__info-icon"></i>
+                <span class="text-truncate">{{ especialidade.email|default:"Não informado" }}</span>
+            </div>
+        </div>
+
+    </a>
+    {% empty %}
+    <div class="col-12 text-center text-muted mt-5 vt-grid-empty">
+        <i class="bi bi-inboxes fs-1 mb-3 d-block"></i>
+        <p>Nenhuma Especialidade cadastrada</p>
+    </div>
+    {% endfor %}
+</div>
