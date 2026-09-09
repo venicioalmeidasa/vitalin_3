@@ -1,8 +1,9 @@
 from django.db import models
+from core.models.timestamp import TimeStampedModel
 from django.utils.text import slugify
 
 
-class Distrito(models.Model):
+class Distrito(TimeStampedModel):
     #Regionais de saúde 
     cnes = models.CharField(
         primary_key=True,
@@ -25,10 +26,7 @@ class Distrito(models.Model):
         allow_unicode=True,
         help_text='Nome amigável para url'
     )
-    data_cadastro = models.DateField(
-        verbose_name='Data do Cadastro',
-        auto_now_add=True
-    )
+
     class Meta:
         ordering = ['nome']
     

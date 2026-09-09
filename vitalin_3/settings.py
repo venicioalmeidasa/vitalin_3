@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
+from django.conf.global_settings import CSRF_COOKIE_SECURE
 from django.conf.global_settings import LOGOUT_REDIRECT_URL
 from django.conf.global_settings import LOGIN_REDIRECT_URL
 from pathlib import Path
@@ -140,5 +141,19 @@ MAILERS = {
     },
 }
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'login'
+
+LOGIN_URL = 'LOGIN' #página para usuários nao autenticados
+
+LOGIN_REDIRECT_URL = 'minha_unidade' #Para onde o usuário vai após fazer login
+
+LOGOUT_REDIRECT_URL = 'login' #página para onde o usuário vai após sair do sistema, fazer logout
+
+#Cookies somente em HTTPS
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+#Tempo de inatividade
+SESSION_COOKIE_AGE = 1800
+
+#Encerra a sessão ao fechar o navegador
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

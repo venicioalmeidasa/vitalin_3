@@ -8,7 +8,18 @@ Este documento descreve os modelos de dados do sistema Vitalin, organizados por 
 
 Contém classes base abstratas e utilitários reutilizáveis pelos demais contextos.
 
-### `UnidadeBase` (Abstrato)
+### `TimeStampedModel` (Abstrato)
+*Localização*: `core.models.timestamp.TimeStampedModel`  
+*Propósito*: Classe base de auditoria para fornecer campos padrões de rastreamento de criação de registros (Compliance com LGPD).
+
+| Campo | Tipo | Restrições | Descrição |
+| :--- | :--- | :--- | :--- |
+| `datetime` | `DateTimeField` | `default=timezone.now` | Data e hora em que o registro foi criado/cadastrado. |
+| `cadastrante` | `CharField` | `max_length=150`, `default='Desenvolvimento'` | Nome/Identificação do usuário ou sistema que criou o registro. |
+
+---
+
+### `UnidadeBase` (Abstrato, Herda de `TimeStampedModel`)
 *Localização*: `core.models.base_estabelecimento.UnidadeBase`  
 *Propósito*: Entidade base para qualquer unidade física/estabelecimento que preste atendimento direto aos usuários do SUS.
 
@@ -16,7 +27,8 @@ Contém classes base abstratas e utilitários reutilizáveis pelos demais contex
 | :--- | :--- | :--- | :--- |
 | `cnes` | `CharField` | `max_length=12`, `primary_key=True` | Código Nacional de Estabelecimentos de Saúde. |
 | `nome` | `CharField` | `max_length=120` | Nome fantasia/comum da unidade. |
-| `data_cadastro` | `DateField` | `auto_now_add=True` | Data de inclusão no sistema. |
+| `datetime` | `DateTimeField` | Herdado de `TimeStampedModel` | Data e hora de inclusão no sistema. |
+| `cadastrante` | `CharField` | Herdado de `TimeStampedModel` | Usuário/sistema que realizou o cadastro. |
 | `ativo` | `BooleanField` | `default=True` | Indica se a unidade está em operação. |
 | `email` | `EmailField` | `null=True`, `blank=True` | Contato eletrônico institucional da unidade. |
 | `slug` | `SlugField` | `max_length=120`, `unique=True`, `allow_unicode=True` | Identificador amigável para URLs. |

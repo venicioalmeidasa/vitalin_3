@@ -1,7 +1,8 @@
 from django.utils.text import slugify
 from django.db import models
+from .timestamp import TimeStampedModel
 
-class UnidadeBase(models.Model):
+class UnidadeBase(TimeStampedModel):
     #Unidade base para unidades que prestam atenção direta ao usuário
     cnes = models.CharField(
         max_length=12,
@@ -12,10 +13,7 @@ class UnidadeBase(models.Model):
         max_length=120,
         verbose_name='Nome'
     )
-    data_cadastro = models.DateField(
-        verbose_name='Data do Cadastro',
-        auto_now_add=True
-    )
+
     ativo = models.BooleanField(
         default=True,
         verbose_name='Ativo'

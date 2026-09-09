@@ -1,9 +1,10 @@
 
 from django.db import models
+from .timestamp import TimeStampedModel
 from django.utils.text import slugify
 from ..validators import valida_cpf, valida_dn
 
-class Pessoa(models.Model):
+class Pessoa(TimeStampedModel):
     class Sexo(models.TextChoices):
         MASCULINO = 'm', 'Masculino'
         FEMININO = 'f', 'Feminino'
@@ -45,17 +46,13 @@ class Pessoa(models.Model):
     dn = models.DateField(
         verbose_name='Data de Nascimento',
         validators=[valida_dn]
-
-    )
-    data_cadastro = models.DateTimeField(
-        verbose_name='Data do Cadastro',
-        auto_now_add=True
     )
     slug = models.SlugField(
         unique=True,
         max_length=200,
         allow_unicode=True
     )
+   
 
     class Meta:
         ordering = ['nome']
