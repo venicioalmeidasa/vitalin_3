@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     #vitalin_3
     'core',
     'apps.regional',
-    'apps.assistencial'
+    'apps.assistencial',
+    'apps.autenticacao'
 ]
 
 MIDDLEWARE = [
@@ -142,7 +143,7 @@ MAILERS = {
 }
 
 
-LOGIN_URL = 'LOGIN' #página para usuários nao autenticados
+LOGIN_URL = 'login' #página para usuários nao autenticados
 
 LOGIN_REDIRECT_URL = 'minha_unidade' #Para onde o usuário vai após fazer login
 

@@ -1,6 +1,3 @@
-from django.core.checks import model_checks
-from django.urls import reverse, reverse_lazy
-from django.contrib import messages
 from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models.pessoa import Pessoa
@@ -26,4 +23,4 @@ class PessoaCreateView(LoginRequiredMixin, CreateView):
     
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['usuario']
+        return None

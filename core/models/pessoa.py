@@ -1,5 +1,6 @@
 
 from django.db import models
+import uuid
 from .timestamp import TimeStampedModel
 from django.utils.text import slugify
 from ..validators import valida_cpf, valida_dn
@@ -63,6 +64,6 @@ class Pessoa(TimeStampedModel):
         return self.nome_social if self.nome_social else self.nome
     
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.nome, allow_unicode=True)
+        self.slug = slugify(f'{self.nome}-{str(uuid.uuid4())[:8]}', allow_unicode=True)
         self.full_clean() #garante a execução dos validators
         super().save(*args, **kwargs)
