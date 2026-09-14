@@ -1,0 +1,258 @@
+[
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225125",
+        "fields": {
+            "profissao": "Clínico Geral",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225133",
+        "fields": {
+            "profissao": "Psiquiatra",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225250",
+        "fields": {
+            "profissao": "Ginecologista/Obstetra",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225124",
+        "fields": {
+            "profissao": "Pediatra",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225285",
+        "fields": {
+            "profissao": "Urologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225112",
+        "fields": {
+            "profissao": "Neurologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225120",
+        "fields": {
+            "profissao": "Cardiologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225103",
+        "fields": {
+            "profissao": "Angiologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225135",
+        "fields": {
+            "profissao": "Endocrinologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225121",
+        "fields": {
+            "profissao": "Hematologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225260",
+        "fields": {
+            "profissao": "Mastologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225109",
+        "fields": {
+            "profissao": "Nefrologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225265",
+        "fields": {
+            "profissao": "Neurocirurgião",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225115",
+        "fields": {
+            "profissao": "Pneumologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225215",
+        "fields": {
+            "profissao": "Coloproctologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225145",
+        "fields": {
+            "profissao": "Reumatologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "225270",
+        "fields": {
+            "profissao": "Ortopedista/Traumatologista",
+            "conselho": "CRM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "223505",
+        "fields": {
+            "profissao": "Enfermeiro",
+            "conselho": "COREN"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "322205",
+        "fields": {
+            "profissao": "Tec Enfermagem",
+            "conselho": "COREN"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "223405",
+        "fields": {
+            "profissao": "Farmacêutico",
+            "conselho": "CRF"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "223208",
+        "fields": {
+            "profissao": "Cirurgião Dentista",
+            "conselho": "CRO"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "223605",
+        "fields": {
+            "profissao": "Fisioterapeuta",
+            "conselho": "CREFITO"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "223905",
+        "fields": {
+            "profissao": "Terapeuta Ocupacional",
+            "conselho": "CREFITO"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "223710",
+        "fields": {
+            "profissao": "Nutricionista",
+            "conselho": "CRN"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "251510",
+        "fields": {
+            "profissao": "Psicólogo",
+            "conselho": "CRP"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "221205",
+        "fields": {
+            "profissao": "Biomédico",
+            "conselho": "CRBM"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "221105",
+        "fields": {
+            "profissao": "Biólogo",
+            "conselho": "CRBio"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "224140",
+        "fields": {
+            "profissao": "Educador Física",
+            "conselho": "CREF"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "251605",
+        "fields": {
+            "profissao": "Assistente Social",
+            "conselho": "CRESS"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "223305",
+        "fields": {
+            "profissao": "Veterinário",
+            "conselho": "CRMV"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "223810",
+        "fields": {
+            "profissao": "Fonoaudiólogo",
+            "conselho": "CREFONO"
+        }
+    },
+    {
+        "model": "profissionais.ocupacaocbo",
+        "pk": "411010",
+        "fields": {
+            "profissao": "Agente Administrativo",
+            "conselho": null
+        }
+    }
+]

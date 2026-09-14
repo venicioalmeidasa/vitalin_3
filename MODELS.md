@@ -19,6 +19,28 @@ Contém classes base abstratas e utilitários reutilizáveis pelos demais contex
 
 ---
 
+### `Pessoa` (Herda de `TimeStampedModel`)
+*Localização*: `core.models.pessoa.Pessoa`  
+*Propósito*: Entidade principal para cadastro de usuários, pacientes e pessoas físicas cíveis, com rígido controle de LGPD e validações de dados (CPF e Data de Nascimento).
+
+| Campo | Tipo | Restrições | Descrição |
+| :--- | :--- | :--- | :--- |
+| `cpf` | `CharField` | `max_length=11`, `primary_key=True` | Chave primária. Validado via `valida_cpf`. |
+| `nome` | `CharField` | `max_length=150` | Nome completo (registro civil). |
+| `nome_social` | `CharField` | `max_length=150`, `null=True`, `blank=True` | Nome social, respeitando a identidade de gênero. |
+| `mae` | `CharField` | `max_length=150`, `null=True`, `blank=True` | Nome da mãe. |
+| `pai` | `CharField` | `max_length=150`, `null=True`, `blank=True` | Nome do pai. |
+| `sexo` | `CharField` | `max_length=1`, `choices=Sexo` | Sexo de nascimento (`m` ou `f`). |
+| `dn` | `DateField` | Obrigatório | Data de Nascimento. Validado via `valida_dn`. |
+| `slug` | `SlugField` | `max_length=200`, `unique=True`, `allow_unicode=True` | Identificador seguro para URLs. |
+
+**Regras de Domínio e Segurança (LGPD):**
+- O `slug` é gerado concatenando o nome com um hash UUID seguro (`str(uuid.uuid4())[:8]`) para evitar a exposição do CPF na URL e garantir unicidade sistêmica.
+- O campo CPF não deve ser exposto de forma insegura, passando sempre por tratamento nos templates/views.
+- Executa a limpeza e validação estrita dos dados via `full_clean()` no método `save()`.
+
+---
+
 ### `UnidadeBase` (Abstrato, Herda de `TimeStampedModel`)
 *Localização*: `core.models.base_estabelecimento.UnidadeBase`  
 *Propósito*: Entidade base para qualquer unidade física/estabelecimento que preste atendimento direto aos usuários do SUS.

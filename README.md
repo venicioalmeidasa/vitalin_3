@@ -12,6 +12,7 @@ Sistema de gestão em saúde pública desenvolvido em Python e Django, voltado �
 ## Estrutura de Bounded Contexts
 
 - **`core/`**: Módulos compartilhados e classes base (`UnidadeBase` para estabelecimentos de saúde e `TimeStampedModel` para auditoria e log de cadastros visando a LGPD).
+- **`apps/autenticacao/`**: Controle granular de acesso e sessões (Login, Logout, Recuperação e Troca de Senhas) utilizando views nativas de segurança do Django.
 - **`apps/regional/`**: Gestão territorial e distritos sanitários de saúde.
 - **`apps/assistencial/`**: Estabelecimentos assistenciais de saúde (Atenção Básica: `Ubs`, Atenção Especializada/Secundária: `Especialidade`).
 
@@ -30,9 +31,13 @@ Sistema de gestão em saúde pública desenvolvido em Python e Django, voltado �
    ```bash
    python manage.py migrate
    ```
-4. Carregar fixtures (se aplicável):
+4. Carregar fixtures e popular banco de dados com dados fictícios (Faker):
    ```bash
+   # Carrega especialidades base
    python manage.py loaddata especialidade
+   
+   # Gera 20.000 pacientes cíveis aleatórios (seguro LGPD)
+   python manage.py inserir_pessoas
    ```
 5. Iniciar o servidor de desenvolvimento:
    ```bash

@@ -1,4 +1,5 @@
 
+from django.core.exceptions import ValidationError
 from django.db import models
 import uuid
 from .timestamp import TimeStampedModel
@@ -67,3 +68,56 @@ class Pessoa(TimeStampedModel):
         self.slug = slugify(f'{self.nome}-{str(uuid.uuid4())[:8]}', allow_unicode=True)
         self.full_clean() #garante a execução dos validators
         super().save(*args, **kwargs)
+
+class Telefone(models.Model):
+    class Vinculo(models.TextChoices):
+        PROPRIO = 'proprio', 'Próprio'
+        PAI = 'pai', 'Pai'
+        MAE = 'mae', 'Mãe'
+        FILHO = 'filho', 'Filho' 
+        CONJUGE = 'conjuge', 'Cônjuge'
+
+    fone = models.CharField(
+        max_length=15,
+        verbose_name='Número do telefone'
+    )
+    pessoa = models.ForeignKey(
+        Pessoa,
+        on_delete=models.CASCADE,
+        verbose_name=Pessoa
+    )
+    nome_contato = models.CharField(
+        max_length=100,
+        verbose_name='Nome do contato',
+        null=True,
+        blank=True
+    )
+    vinculo = models.CharField(
+        max_length=15,
+        choices=Vinculo.choices,
+        default=Vinculo.PROPRIO,
+        verbose_name='Vinculo',
+        null=True,
+        blank=True
+    )
+    wa = models.BooleanField(
+        verbose_name='Whatsapp',
+        default=True
+    )
+
+    def clean(self):
+        super().clean()
+        #Caso vinculo diferente de prório o nome_contato é obrigatório
+        if self.vinculo != self.Vinculo.PROPRIO and not self.nome_contato:
+            raise ValidationError({
+                'nome_contato': 'O nome do contato é obrigatório!'
+            })
+        if self.vinculo == self.Vinculo.PROPRIO and (self.nome_contato and self.nome_contato.strip()):
+            raise ValidationError({
+                'nome_contato': 'ja que o telefone é próprio, esse campo deve estar vazio'
+            })
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
+
+        

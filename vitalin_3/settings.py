@@ -10,9 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
-from django.conf.global_settings import CSRF_COOKIE_SECURE
-from django.conf.global_settings import LOGOUT_REDIRECT_URL
-from django.conf.global_settings import LOGIN_REDIRECT_URL
 from pathlib import Path
 import sys
 
@@ -45,7 +42,8 @@ INSTALLED_APPS = [
     'core',
     'apps.regional',
     'apps.assistencial',
-    'apps.autenticacao'
+    'apps.autenticacao',
+    'apps.profissionais'
 ]
 
 MIDDLEWARE = [
