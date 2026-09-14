@@ -1,10 +1,10 @@
-
+from core.validators.fone import valida_fone
 from django.core.exceptions import ValidationError
 from django.db import models
 import uuid
 from .timestamp import TimeStampedModel
 from django.utils.text import slugify
-from ..validators import valida_cpf, valida_dn
+from ..validators import valida_cpf, valida_dn, fone
 
 class Pessoa(TimeStampedModel):
     class Sexo(models.TextChoices):
@@ -69,6 +69,7 @@ class Pessoa(TimeStampedModel):
         self.full_clean() #garante a execução dos validators
         super().save(*args, **kwargs)
 
+
 class Telefone(models.Model):
     class Vinculo(models.TextChoices):
         PROPRIO = 'proprio', 'Próprio'
@@ -79,7 +80,10 @@ class Telefone(models.Model):
 
     fone = models.CharField(
         max_length=15,
-        verbose_name='Número do telefone'
+        primary_key=True,
+        verbose_name='Número do telefone',
+        validators=[valida_fone],
+        help_text='(DDD)123456789'
     )
     pessoa = models.ForeignKey(
         Pessoa,
@@ -114,7 +118,7 @@ class Telefone(models.Model):
             })
         if self.vinculo == self.Vinculo.PROPRIO and (self.nome_contato and self.nome_contato.strip()):
             raise ValidationError({
-                'nome_contato': 'ja que o telefone é próprio, esse campo deve estar vazio'
+                'nome_contato': 'O telefone está cadastrado como próprio, esse campo deve estar vazio'
             })
     def save(self, *args, **kwargs):
         self.full_clean()
