@@ -1,6 +1,7 @@
 from faker import Faker
 import random
 from django.utils.text import slugify
+import re
 import uuid
 from core.models.pessoa import Pessoa
 from django.core.management.base import BaseCommand
@@ -15,12 +16,16 @@ class Command(BaseCommand):
         for _ in range(20000):
             sexo_fake = random.choice(Pessoa.Sexo.values)
             nome_fake = fake.name_male() if sexo_fake.casefold() == 'm' else fake.name_female()
+            #Limpa CPF
+            cpf_fake = fake.unique.cpf()
+            cpf_limpo = re.sub(r'\D', '',cpf_fake)
+
             novapessoa = Pessoa(
                 nome=nome_fake,
                 mae=fake.name_female(),
                 pai=fake.name_male(),
                 sexo=sexo_fake,
-                cpf=fake.unique.cpf(),
+                cpf=cpf_limpo,
                 dn=fake.date_of_birth(minimum_age=18, maximum_age=60),
                 cadastrante='Desenvolvimento',
                 slug=slugify(f'{nome_fake}-{uuid.uuid4()}', allow_unicode=True)

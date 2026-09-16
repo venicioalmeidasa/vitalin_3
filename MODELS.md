@@ -41,6 +41,25 @@ Contém classes base abstratas e utilitários reutilizáveis pelos demais contex
 
 ---
 
+### `Telefone`
+*Localização*: `core.models.pessoa.Telefone`  
+*Propósito*: Entidade para registrar os números de telefone vinculados a uma Pessoa.
+
+| Campo | Tipo | Restrições | Descrição |
+| :--- | :--- | :--- | :--- |
+| `fone` | `CharField` | `max_length=15`, `primary_key=True` | Número do telefone. Validado via `valida_fone`. |
+| `pessoa` | `ForeignKey` | `to='Pessoa'`, `on_delete=CASCADE` | Pessoa vinculada ao telefone. |
+| `nome_contato` | `CharField` | `max_length=100`, `null=True`, `blank=True` | Nome do contato (obrigatório se o vínculo não for "próprio"). |
+| `vinculo` | `CharField` | `max_length=15`, `choices=Vinculo`, `default='proprio'` | Vínculo do contato (Próprio, Pai, Mãe, Filho, Cônjuge). |
+| `wa` | `BooleanField` | `default=True` | Indica se o número possui WhatsApp. |
+
+**Regras de Domínio:**
+- Se o `vinculo` for diferente de "Próprio", o `nome_contato` é obrigatório.
+- Se o `vinculo` for "Próprio", o campo `nome_contato` deve ficar vazio.
+- Validação garantida através do método `clean()` e executada via `full_clean()` no `save()`.
+
+---
+
 ### `UnidadeBase` (Abstrato, Herda de `TimeStampedModel`)
 *Localização*: `core.models.base_estabelecimento.UnidadeBase`  
 *Propósito*: Entidade base para qualquer unidade física/estabelecimento que preste atendimento direto aos usuários do SUS.
@@ -109,3 +128,33 @@ Contexto responsável pelas unidades de atendimento direto aos cidadãos (Atenç
 | `slug` | `SlugField` | Herdado (`max_length=120`) | Slug amigável da especialidade. |
 | `vinculo` | `CharField` | `max_length=120` | Departamento ou coordenadoria de vinculação hierárquica. |
 | `sigla` | `CharField` | `max_length=30`, opcional | Sigla da unidade (ex: CER, CEEM, CRAIM, etc.). |
+
+---
+
+## 4. Profissionais (`apps.profissionais`)
+
+Contexto responsável pelo gerenciamento dos profissionais de saúde e suas ocupações.
+
+### `OcupacaoCBO`
+*Localização*: `apps.profissionais.models.OcupacaoCBO`  
+*Propósito*: Classificação Brasileira de Ocupações para definir os cargos dos profissionais.
+
+| Campo | Tipo | Restrições | Descrição |
+| :--- | :--- | :--- | :--- |
+| `cbo` | `CharField` | `max_length=6`, `primary_key=True` | Código da Classificação Brasileira de Ocupações. |
+| `profissao` | `CharField` | `max_length=150` | Nome descritivo da profissão. |
+| `conselho` | `CharField` | `max_length=10`, `choices=TIPOS_CONSELHO_CHOICES`, opcional | Conselho de classe ao qual a profissão está vinculada (ex: CRM, COREN). |
+
+---
+
+### `Profissionais` (Herda de `TimeStampedModel`)
+*Localização*: `apps.profissionais.models.Profissionais`  
+*Propósito*: Representa um profissional de saúde, vinculando os dados de Pessoa Física à sua ocupação e matrícula.
+
+| Campo | Tipo | Restrições | Descrição |
+| :--- | :--- | :--- | :--- |
+| `pessoa` | `OneToOneField` | `to='core.Pessoa'`, `on_delete=PROTECT` | Relacionamento 1:1 com os dados civis do profissional. |
+| `matricula` | `CharField` | `max_length=50`, `primary_key=True` | Número de matrícula do profissional. |
+| `data_contratacao` | `DateField` | Obrigatório | Data em que o profissional foi contratado. |
+| `ocupacao` | `ForeignKey` | `to='OcupacaoCBO'`, `on_delete=PROTECT` | Ocupação/CBO vinculada ao profissional. |
+| `num_conselho` | `CharField` | `max_length=50`, opcional | Número do registro no conselho de classe. |

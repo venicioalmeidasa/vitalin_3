@@ -1,10 +1,10 @@
-from core.validators.fone import valida_fone
+
 from django.core.exceptions import ValidationError
 from django.db import models
 import uuid
 from .timestamp import TimeStampedModel
 from django.utils.text import slugify
-from ..validators import valida_cpf, valida_dn, fone
+from core.validators import valida_dn, valida_cpf, valida_fone
 
 class Pessoa(TimeStampedModel):
     class Sexo(models.TextChoices):

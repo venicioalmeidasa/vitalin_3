@@ -1,6 +1,7 @@
 
 from django.core.management import BaseCommand, CommandError
-from ..models.pessoa import Pessoa, Telefone
+from core.models.pessoa import Pessoa, Telefone
+import random
 from faker import Faker
 
 class Command(BaseCommand):
@@ -13,12 +14,14 @@ class Command(BaseCommand):
             raise CommandError('Cadastre as pessoas primeiro através do Command inserir_pessoas')
         numeros = []
         for num in pessoas:
-            nummero_fake = fake.unique.numerify('###########')
+            ddd = f'0{random.randint(a=1, b=9)}{random.randint(a=1, b=9)}'
+            nummero_fake = ddd + fake.unique.numerify('#########')
             telefone = Telefone(
                 fone=nummero_fake,
-                pessoa=num,
+                pessoa_id=num,
             )
             numeros.append(telefone)
         Telefone.objects.bulk_create(numeros, ignore_conflicts=True)
+        self.stdout.write(self.style.SUCCESS('Telefones vinculados a todos os funcionários com sucesso!'))
 
         
