@@ -15,7 +15,7 @@ class Command(BaseCommand):
         pessoas = []
         for _ in range(20000):
             sexo_fake = random.choice(Pessoa.Sexo.values)
-            nome_fake = fake.name_male() if sexo_fake.casefold() == 'm' else fake.name_female()
+            nome_fake = fake.unique.name_male() if sexo_fake.casefold() == 'm' else fake.unique.name_female()
             #Limpa CPF
             cpf_fake = fake.unique.cpf()
             cpf_limpo = re.sub(r'\D', '',cpf_fake)

@@ -26,7 +26,6 @@ class Distrito(TimeStampedModel):
         allow_unicode=True,
         help_text='Nome amigável para url'
     )
-
     class Meta:
         ordering = ['nome']
     

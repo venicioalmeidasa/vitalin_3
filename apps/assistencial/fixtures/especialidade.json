@@ -8,7 +8,8 @@
             "vinculo": "Departamento de Saúde",
             "email": "saude.reabfisica@campinas.sp.gov.br",
             "ativo": true,
-            "data_cadastro": "2026-02-09",
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "slug": "centro-de-referência-especializado-em-reabilitação"
         }
     },
@@ -21,7 +22,8 @@
             "vinculo": "Departamento de Saúde",
             "email": "sms.ceem@campinas.sp.gov.br",
             "ativo": true,
-            "data_cadastro": "2026-02-09",
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "slug": "centro-de-exames-e-especialidades-médicas"
         }
     },
@@ -34,7 +36,8 @@
             "vinculo": "Departamento de Saúde",
             "email": "sms.craim@campinas.sp.gov.br",
             "ativo": true,
-            "data_cadastro": "2026-02-09",
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "slug": "centro-de-referência-de-assistência-integral-à-mulher"
         }
     },
@@ -47,7 +50,8 @@
             "vinculo": "Departamento de Saúde",
             "email": null,
             "ativo": true,
-            "data_cadastro": "2026-02-09",
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "slug": "centro-de-referência-e-diagnóstico-em-oncologia"
         }
     },
@@ -60,7 +64,8 @@
             "vinculo": "Coordenadoria Departamental de Saúde do Trabalhador e Determinantes Ambientais da Saúde, do Departamento de Vigilância em Saúde",
             "email": "saude.cerest@campinas.sp.gov.br",
             "ativo": true,
-            "data_cadastro": "2026-02-09",
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "slug": "centro-de-referência-em-saúde-do-trabalhador"
         }
     },
@@ -73,7 +78,8 @@
             "vinculo":"Departamento de Saúde",
             "email": "saude.policlinica2@campinas.sp.gov.br",
             "ativo": true,
-            "data_cadastro": "2026-02-09",
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "slug":"ambulatorio-de-especialidades"
         }
     },
@@ -86,7 +92,8 @@
             "vinculo": "Departamento de Saúde",
             "email": "dst.aids@campinas.sp.gov.br",
             "ativo": true,
-            "data_cadastro": "2026-02-09",
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "slug":"centro-de-referência-em-ist-hivaids-e-hepatites-virais-dra-silvia-brandão-bertazolli-bellucci"
         }
     },
@@ -99,7 +106,8 @@
             "vinculo":"Departamento de Saúde",
             "email": "ceo.sudoeste@campinas.sp.gov.br",
             "ativo": true,
-            "data_cadastro": "2026-02-09",
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "slug": "centro-de-especialidades-odontológicas-dr-jorge-f-baracat"
         }
     },
@@ -112,7 +120,8 @@
             "vinculo":"Departamento de Saúde",
             "email":"ceo.noroeste@campinas.sp.gov.br",
             "ativo":true,
-            "data_cadastro":"2026-02-09",
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "slug": "centro-de-especialidades-odontológicas-noroeste"
         }
     },
@@ -125,7 +134,8 @@
             "vinculo": "Departamento de Saúde",
             "email": "ceo.sul@campinas.sp.gov.br",
             "ativo":true,
-            "data_cadastro":"2026-02-09",
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "slug": "centro-de-especialidades-odontológicas-sul"
         }
     }

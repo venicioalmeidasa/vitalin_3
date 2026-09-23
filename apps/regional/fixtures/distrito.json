@@ -7,7 +7,8 @@
             "email": "saude.distnorte@campinas.sp.gov.br",
             "ativo": true,
             "slug": "norte",
-            "data_cadastro": "2026-03-10"
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento"
         }
     },
     {
@@ -18,7 +19,8 @@
             "email": "saude.distleste@campinas.sp.gov.br",
             "ativo": true,
             "slug": "leste",
-            "data_cadastro": "2026-03-10"
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento"
         }
     },
     {
@@ -29,7 +31,8 @@
             "email": "saude.distsul@campinas.sp.gov.br",
             "ativo": true,
             "slug": "sul",
-            "data_cadastro": "2026-03-10"
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento"
         }
     },
     {
@@ -40,7 +43,8 @@
             "email": "saude.distnoroeste@campinas.sp.gov.br",
             "ativo": true,
             "slug": "noroeste",
-            "data_cadastro": "2026-03-10"
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento"
         }
     },
     {
@@ -51,7 +55,8 @@
             "email": "saude.distsudoeste@campinas.sp.gov.br",
             "ativo": true,
             "slug": "sudoeste",
-            "data_cadastro": "2026-03-10"
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento"
         }
     },
     {
@@ -62,7 +67,8 @@
             "email": "sms.distsuleste@campinas.sp.gov.br",
             "ativo": true,
             "slug": "suleste",
-            "data_cadastro": "2026-03-10"
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento"
         }
     }
 ]

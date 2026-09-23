@@ -1,4 +1,6 @@
 from django.contrib import admin
-from .models import OcupacaoCBO
+from .models.ocupacoes import OcupacaoCBO
+from .models.rh import Profissional
 
 admin.site.register(OcupacaoCBO)
+admin.site.register(Profissional)

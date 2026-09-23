@@ -108,6 +108,10 @@ class OcupacaoCBO(TimeStampedModel):
             ]
         },
     }
+
+    ESTRUTURA_PROFISSAO_SEM_CONSELHO:dict[str, str] = {
+        'Agente Administrativo': '411010'
+    }
     
     #Conselhos e descrição em si
     TIPOS_CONSELHO_CHOICES:list = [
@@ -115,7 +119,7 @@ class OcupacaoCBO(TimeStampedModel):
         ]
     # Profissões sem conselhos
     PROFISSOES_SEM_CONSELHO:list[tuple[str,str]] = [
-        ('Agente Administrativo', 'Agente Administrativo')
+        (nome, nome) for nome, cbo in ESTRUTURA_PROFISSAO_SEM_CONSELHO.items()
     ]
     
     # Extrai o nome de cada profissão dentro dos conselhos (Formato: ('Nome', 'Nome'))
@@ -159,59 +163,24 @@ class OcupacaoCBO(TimeStampedModel):
         return f"{self.profissao} | {self.cbo}"
     
     def clean(self):
+        #Campo conselho será automatizado e deverá será renderizado
+        nome_prof_sem_conselho = [prof[0] for prof in self.PROFISSOES_SEM_CONSELHO]
+        if self.profissao not in nome_prof_sem_conselho and not self.conselho:
+            #buscando profissões na fonte inquestionável da verdade
+            for conselho, dados in self.ESTRUTURA_CONSELHOS.items():
+                for tupla in dados['profissoes']:
+                    if tupla[0] == self.profissao:
+                        self.conselho = conselho
+                        self.cbo = tupla[1]
+
+            
         super().clean()
         # Em branco para profissões sem conselho
-        
-        if self.profissao and self.conselho:
+        if self.profissao in nome_prof_sem_conselho and self.conselho:
             raise ValidationError(f'Para {self.profissao} não pode haver conselho')
         
-        # Verificando se a profissão pertence ao referido conselho
-        if self.profissao and self.conselho:
-            dados_conselho = self.ESTRUTURA_CONSELHOS.get(self.conselho, {})
-            lista_profissao_cbo = dados_conselho.get('profissoes', [])
-            lista_profissao = [prof[0] for prof in lista_profissao_cbo]
-
-            if self.profissao not in lista_profissao:
-                raise ValidationError(f'Profissão {self.profissao} não cadastrada no conselho {self.conselho}')
+  
 
     def save(self, *args, **kwargs):
         self.full_clean()
         super().save(*args, **kwargs)
-
-
-class Profissionais(TimeStampedModel):
-    pessoa = models.OneToOneField(
-        'core.Pessoa',
-        on_delete=models.PROTECT,
-        related_name='profissional',
-    )
-    matricula = models.CharField(
-        primary_key=True,
-        max_length=50,
-        verbose_name='Matrícula'
-    )
-    data_contratacao = models.DateField(
-        verbose_name='Data da Contratação'
-    )
-    ocupacao = models.ForeignKey(
-        OcupacaoCBO,
-        on_delete=models.PROTECT,
-        related_name='profissionais',
-        verbose_name='Ocupação (CBO)'
-    )
-    num_conselho = models.CharField(
-        max_length=50,
-        verbose_name='Número do Conselho',
-        blank=True,
-        null=True
-    )
-    
-    class Meta:
-        verbose_name = 'Profissional'
-        verbose_name_plural = 'Profissionais'
-        ordering =['pessoa__nome']
-    
-    def __str__(self):
-        return f'{self.pessoa} | {self.ocupacao.profissao} {self.ocupacao.cbo}'
-
-    

@@ -3,6 +3,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225125",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Clínico Geral",
             "conselho": "CRM"
         }
@@ -11,6 +13,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225133",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Psiquiatra",
             "conselho": "CRM"
         }
@@ -19,6 +23,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225250",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Ginecologista/Obstetra",
             "conselho": "CRM"
         }
@@ -27,6 +33,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225124",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Pediatra",
             "conselho": "CRM"
         }
@@ -35,6 +43,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225285",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Urologista",
             "conselho": "CRM"
         }
@@ -43,6 +53,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225112",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Neurologista",
             "conselho": "CRM"
         }
@@ -51,6 +63,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225120",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Cardiologista",
             "conselho": "CRM"
         }
@@ -59,6 +73,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225103",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Angiologista",
             "conselho": "CRM"
         }
@@ -67,6 +83,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225135",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Endocrinologista",
             "conselho": "CRM"
         }
@@ -75,6 +93,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225121",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Hematologista",
             "conselho": "CRM"
         }
@@ -83,6 +103,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225260",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Mastologista",
             "conselho": "CRM"
         }
@@ -91,6 +113,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225109",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Nefrologista",
             "conselho": "CRM"
         }
@@ -99,6 +123,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225265",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Neurocirurgião",
             "conselho": "CRM"
         }
@@ -107,6 +133,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225115",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Pneumologista",
             "conselho": "CRM"
         }
@@ -115,6 +143,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225215",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Coloproctologista",
             "conselho": "CRM"
         }
@@ -123,6 +153,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225145",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Reumatologista",
             "conselho": "CRM"
         }
@@ -131,6 +163,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "225270",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Ortopedista/Traumatologista",
             "conselho": "CRM"
         }
@@ -139,6 +173,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "223505",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Enfermeiro",
             "conselho": "COREN"
         }
@@ -147,6 +183,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "322205",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Tec Enfermagem",
             "conselho": "COREN"
         }
@@ -155,6 +193,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "223405",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Farmacêutico",
             "conselho": "CRF"
         }
@@ -163,6 +203,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "223208",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Cirurgião Dentista",
             "conselho": "CRO"
         }
@@ -171,6 +213,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "223605",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Fisioterapeuta",
             "conselho": "CREFITO"
         }
@@ -179,6 +223,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "223905",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Terapeuta Ocupacional",
             "conselho": "CREFITO"
         }
@@ -187,6 +233,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "223710",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Nutricionista",
             "conselho": "CRN"
         }
@@ -195,6 +243,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "251510",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Psicólogo",
             "conselho": "CRP"
         }
@@ -203,6 +253,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "221205",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Biomédico",
             "conselho": "CRBM"
         }
@@ -211,6 +263,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "221105",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Biólogo",
             "conselho": "CRBio"
         }
@@ -219,6 +273,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "224140",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Educador Física",
             "conselho": "CREF"
         }
@@ -227,6 +283,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "251605",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Assistente Social",
             "conselho": "CRESS"
         }
@@ -235,6 +293,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "223305",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Veterinário",
             "conselho": "CRMV"
         }
@@ -243,6 +303,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "223810",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Fonoaudiólogo",
             "conselho": "CREFONO"
         }
@@ -251,6 +313,8 @@
         "model": "profissionais.ocupacaocbo",
         "pk": "411010",
         "fields": {
+            "datetime": "2026-03-10T12:00:00Z",
+            "cadastrante": "Desenvolvimento",
             "profissao": "Agente Administrativo",
             "conselho": null
         }
