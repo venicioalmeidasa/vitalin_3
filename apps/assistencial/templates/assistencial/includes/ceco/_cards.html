@@ -1,0 +1,36 @@
+<div class="vt-card-grid">
+    {% for ceco in cecos %}
+    <a href="{% url 'assistencial:ceco' ceco.slug %}" class="vt-card-unit" title="Acessar {{ ceco.nome }}">
+        
+        {% if ceco.distrito %}
+        <span class="vt-card-unit__badge" title="Distrito Regional: {{ ceco.distrito.nome }}">
+            <i class="bi bi-pin-map-fill"></i>
+            <span>{{ ceco.distrito.nome }}</span>
+        </span>
+        {% endif %}
+
+        <div class="vt-card-unit__header">
+            <div class="vt-card-unit__icon">
+                <i class="bi bi-people vt-icon"></i>
+            </div>
+            <div class="vt-card-unit__header-text">
+                <h2 class="vt-card-unit__title">{{ ceco.nome }}</h2>
+                <p class="vt-card-unit__subtitle">{{ ceco.cnes|default:"Não informado" }}</p>
+            </div>
+        </div>
+
+        <div class="vt-card-unit__info">
+            <div class="vt-card-unit__info-item">
+                <i class="bi bi-envelope-at vt-card-unit__info-icon"></i>
+                <span class="text-truncate">{{ ceco.email|default:"Não informado" }}</span>
+            </div>
+        </div>
+
+    </a>
+    {% empty %}
+    <div class="col-12 text-center text-muted mt-5 vt-grid-empty">
+        <i class="bi bi-inboxes fs-1 mb-3 d-block"></i>
+        <p>Nenhum Centro de Convivência e Oficina cadastrado</p>
+    </div>
+    {% endfor %}
+</div>

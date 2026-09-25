@@ -9,6 +9,7 @@ class Command(BaseCommand):
         FIXTURES = [
             'distrito.json',
             'especialidade.json',
+            'ceco.json',
             'ubs.json',
             'ocupacoes.json'
         ]

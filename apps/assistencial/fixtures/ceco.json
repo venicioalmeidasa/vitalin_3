@@ -1,0 +1,105 @@
+[
+    {
+        "model": "assistencial.ceco",
+        "pk": "272191",
+        "fields": {
+            "nome": "Viver e Conviver",
+            "email": "cecoviverconviver@campinas.sp.gov.br",
+            "distrito": 2023466,
+            "datetime": "2026-04-24T15:45:00Z",
+            "cadastrante": "Desenvolvimento",
+            "slug": "viver-e-conviver",
+            "ativo": true
+        }
+    },
+    {
+        "model": "assistencial.ceco",
+        "pk": "3946053",
+        "fields": {
+            "nome": "Raízes",
+            "distrito": 9555838,
+            "datetime": "2026-04-24T15:45:00Z",
+            "cadastrante": "Desenvolvimento",
+            "slug": "raizes",
+            "ativo": true
+        }
+    },
+    {
+        "model": "assistencial.ceco",
+        "pk": "3946061",
+        "fields": {
+            "nome": "Quintal dos Encontros",
+            "email": "cecosuleste@gmail.com",
+            "distrito": 4252241,
+            "datetime": "2026-04-24T15:45:00Z",
+            "cadastrante": "Desenvolvimento",
+            "slug": "quintal-dos-encontros",
+            "ativo": true
+        }
+    },
+    {
+        "model": "assistencial.ceco",
+        "pk": "2079003",
+        "fields": {
+            "nome": "Espaço das Vilas",
+            "email": "espaco.das.vilas@candido.org.br",
+            "distrito": 7774672,
+            "datetime": "2026-04-24T15:45:00Z",
+            "cadastrante": "Desenvolvimento",
+            "slug": "espaco-das-vilas",
+            "ativo": true
+        }
+    },
+    {
+        "model": "assistencial.ceco",
+        "pk": "3946037",
+        "fields": {
+            "nome": "Casa dos Sonhos",
+            "email": "casa.dos.sonhos@candido.org.br",
+            "distrito": 7774672,
+            "datetime": "2026-04-24T15:45:00Z",
+            "cadastrante": "Desenvolvimento",
+            "slug": "casa-dos-sonhos",
+            "ativo": true
+        }
+    },
+    {
+        "model": "assistencial.ceco",
+        "pk": "5852749",
+        "fields": {
+            "nome": "Tear das Artes",
+            "email": "sms.teardasartes@campinas.sp.gov.br",
+            "distrito": 2023040,
+            "datetime": "2026-04-24T15:45:00Z",
+            "cadastrante": "Desenvolvimento",
+            "slug": "tear-das-artes",
+            "ativo": true
+        }
+    },
+    {
+        "model": "assistencial.ceco",
+        "pk": "6271472",
+        "fields": {
+            "nome": "Toninha",
+            "email": "toninha@candido.org.br",
+            "distrito": 2023059,
+            "datetime": "2026-04-24T15:45:00Z",
+            "cadastrante": "Desenvolvimento",
+            "slug": "toninha",
+            "ativo": true
+        }
+    },
+    {
+        "model": "assistencial.ceco",
+        "pk": "5549051",
+        "fields": {
+            "nome": "Casa das Oficinas",
+            "email": "casa.das.oficinas@candido.org.br",
+            "distrito": 2023059,
+            "datetime": "2026-04-24T15:45:00Z",
+            "cadastrante": "Desenvolvimento",
+            "slug": "casa-das-oficinas",
+            "ativo": true
+        }
+    }
+]

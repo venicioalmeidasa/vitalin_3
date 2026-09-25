@@ -32,13 +32,14 @@ Sistema de gestão em saúde pública desenvolvido em Python e Django, voltado �
    ```bash
    python manage.py migrate
    ```
-4. Carregar fixtures e popular banco de dados com dados fictícios (Faker):
+4. Carregar fixtures e popular banco de dados com dados fictícios:
    ```bash
-   # Carrega especialidades base
-   python manage.py loaddata especialidade
+   # Certifique-se de que a biblioteca Faker está instalada (necessária para gerar dados fictícios LGPD)
+   pip install faker
    
-   # Gera 20.000 pacientes cíveis aleatórios (seguro LGPD)
-   python manage.py inserir_pessoas
+   # O comando abaixo centraliza o carregamento de todas as fixtures (cidades, ocupações, etc) 
+   # e insere todos os dados fictícios estruturados de Pessoas, Telefones e Profissionais.
+   python manage.py popular_bd
    ```
 5. Iniciar o servidor de desenvolvimento:
    ```bash

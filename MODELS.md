@@ -95,7 +95,8 @@ Contexto responsável pela gestão territorial de saúde e distritos sanitários
 | `email` | `EmailField` | Obrigatório | E-mail de contato da regional. |
 | `ativo` | `BooleanField` | `default=True` | Situação cadastral. |
 | `slug` | `SlugField` | `unique=True`, `allow_unicode=True` | Slug amigável gerado do nome. |
-| `data_cadastro` | `DateField` | `auto_now_add=True` | Data de cadastro. |
+| `datetime` | `DateTimeField` | Herdado de `TimeStampedModel` | Data e hora em que o registro foi criado/cadastrado. |
+| `cadastrante` | `CharField` | Herdado de `TimeStampedModel` | Nome/Identificação do usuário que criou o registro. |
 
 ---
 

@@ -10,7 +10,8 @@ class Ubs(UnidadeBase):
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        related_name='ubss'
+        related_name='ubss',
+        verbose_name='Distrito'
     )
     nome_oficial = models.CharField(
         max_length=75,
