@@ -1,5 +1,5 @@
 from django.db import models
-from core.models.base_estabelecimento import UnidadeBase
+from core.models.base_estabelecimento import UnidadeBase, HorarioFuncionamentoBase
 
 
 class Especialidade(UnidadeBase):
@@ -17,4 +17,11 @@ class Especialidade(UnidadeBase):
     class Meta(UnidadeBase.Meta):
         verbose_name = 'Especialidade'
         verbose_name_plural = 'Especialidades'
-    
+
+class HorarioEspecialidade(HorarioFuncionamentoBase):
+    especialidade = models.ForeignKey(
+        Especialidade,
+        on_delete=models.CASCADE,
+        verbose_name='Horários Especialide',
+        related_name='horarios'
+    )
