@@ -1,5 +1,5 @@
 from django.db import models
-from core.models.base_estabelecimento import UnidadeBase
+from core.models.base_estabelecimento import UnidadeBase, HorarioFuncionamentoBase
 
 
 # Create your models here.
@@ -21,4 +21,10 @@ class Ubs(UnidadeBase):
         verbose_name = 'Unidade Básica de Saúde'
         verbose_name_plural = 'Unidades Básicas de Saúde'
 
-
+class HorarioUbs(HorarioFuncionamentoBase):
+    ubs = models.ForeignKey(
+        Ubs,
+        on_delete=models.CASCADE,
+        verbose_name='Unidade Básica de Saúde',
+        related_name='horarios'
+    )
