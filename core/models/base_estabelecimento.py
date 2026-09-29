@@ -69,6 +69,9 @@ class HorarioFuncionamentoBase(TimeStampedModel):
         abstract = True
         verbose_name = 'Horário de Funcionamento'
         verbose_name_plural = 'Horários de Funcionamento'
+    
+    def __str__(self):
+        return f'{self.dia} {self.hora_abre} às {self.hora_fecha}'
 
     def clean(self):
         # A unidade deve ficar aberta por um mínimo de 3 horas
