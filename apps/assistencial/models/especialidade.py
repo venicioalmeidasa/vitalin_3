@@ -1,3 +1,4 @@
+from django.db.models import constraints
 from django.db import models
 from core.models.base_estabelecimento import UnidadeBase, HorarioFuncionamentoBase
 
@@ -25,3 +26,11 @@ class HorarioEspecialidade(HorarioFuncionamentoBase):
         verbose_name='Horários Especialide',
         related_name='horarios'
     )
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['especialidade', 'dia'],
+                name='unique_especialidade_dia',
+                violation_error_message='Já existe horario cadastrado para este dia na referida especialidade'
+            )
+        ]

@@ -21,3 +21,12 @@ class HorarioCeco(HorarioFuncionamentoBase):
         verbose_name='Horários Cecos',
         related_name='horarios'
     )
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['ceco', 'dia'],
+                name='unique_ceco_dia',
+                violation_error_message='Já existe horario cadastrado para este dia no referido ceco'
+            )
+        ]

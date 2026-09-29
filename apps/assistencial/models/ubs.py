@@ -20,6 +20,7 @@ class Ubs(UnidadeBase):
     class Meta(UnidadeBase.Meta):
         verbose_name = 'Unidade Básica de Saúde'
         verbose_name_plural = 'Unidades Básicas de Saúde'
+       
 
 class HorarioUbs(HorarioFuncionamentoBase):
     ubs = models.ForeignKey(
@@ -28,3 +29,11 @@ class HorarioUbs(HorarioFuncionamentoBase):
         verbose_name='Unidade Básica de Saúde',
         related_name='horarios'
     )
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['ubs', 'dia'],
+                name='unique_ubs_dia',
+                violation_error_message='Já existe horario cadastrado para este dia na referida UBS'
+            )
+        ]
