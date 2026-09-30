@@ -1,5 +1,6 @@
 from django.db import models
 from core.models.timestamp import TimeStampedModel
+from core.models.base_estabelecimento import HorarioFuncionamentoBase
 from django.utils.text import slugify
 
 
@@ -37,3 +38,18 @@ class Distrito(TimeStampedModel):
         self.full_clean()
         super().save(*args, **kwargs)
 
+class HorarioDistrito(HorarioFuncionamentoBase):
+    distrito = models.ForeignKey(
+        Distrito,
+        on_delete=models.CASCADE,
+        verbose_name='Distrito',
+        related_name='horarios'
+    )
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['distrito', 'dia'],
+                name='unique_distrito_dia',
+                violation_error_message='Já existe horario cadastrado para este dia no referido distrito'
+            )
+        ]

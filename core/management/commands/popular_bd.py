@@ -15,9 +15,10 @@ class Command(BaseCommand):
         ]
         
         COMANDANDOS = [
+            'inserir_horario_unidade',
             'inserir_pessoas',
             'inserir_telefones',
-            'inserir_profissionais'
+            'inserir_profissionais',
         ]
 
         for fixture in FIXTURES:
